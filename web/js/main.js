@@ -38,7 +38,7 @@
     });
 
 //关闭
-    $(".close").click(function () {
+    $(".close,.close2").click(function () {
         $(".PoP-wrap").fadeOut(300);
         $(".error").html("");
         $("#mobile").val("");
