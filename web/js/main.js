@@ -71,7 +71,6 @@
                                 $("#submitPoP").fadeIn(300);
                                 $("#close").click(function () {
                                     window.location.href = "weixin?action=refresh2&pMobile=" + data.mobile;
-                                    $("#ID").val(data.mobile);//获取后台传回来的手机号
                                 });
                             }
                             else if(order==2)//立即邀请按钮
@@ -80,7 +79,6 @@
                                 $("#share-tip-wrap").fadeIn(300);
                                 $("#know").click(function () {
                                     window.location.href = "weixin?action=refresh2&pMobile=" + data.mobile;
-                                    $("#ID").val(data.mobile);//获取后台传回来的手机号
                                 });
                             }
                         }
@@ -178,7 +176,7 @@
         url:"weixin?action=getData",
         dataType:"json",
         success:function (json) {//json存储success和data
-            if($("#ID").val()=="")
+            if($("#ID").text()=="")
             {
                 $("#invitationList").html("");
                 $("#totalMoney").html("0");
