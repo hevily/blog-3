@@ -28,13 +28,13 @@
 // //立即上传
     $("#upload").click(function () {
             $("#form-PoP").fadeIn(300);
-            var order=1;
+            order=1;
     })
 
 // //立即邀请
     $("#upload2").click(function (){
             $("#form-PoP").fadeIn(300);
-            var order=2;
+            order=2;
     });
 
 //关闭
@@ -66,7 +66,7 @@
                     {
                         if(data.code==1)//验证码正确
                         {
-                            if(order=1){//立即认证按钮
+                            if(order==1){//立即认证按钮
                                 $("#form-PoP").fadeOut();
                                 $("#submitPoP").fadeIn(300);
                                 $("#close").click(function () {
@@ -74,7 +74,7 @@
                                     $("#ID").val(data.mobile);//获取后台传回来的手机号
                                 });
                             }
-                            else if(order=2)//立即邀请按钮
+                            else if(order==2)//立即邀请按钮
                             {
                                 $("#form-PoP").fadeOut();
                                 $("#share-tip-wrap").fadeIn(300);

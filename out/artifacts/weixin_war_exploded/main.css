@@ -190,3 +190,13 @@ option{background:rgb( 211, 242, 251 );}
     -ms-animation-delay: 1s;
     animation-delay:1s;
 }
+
+/*----------
+  微信领取红包页
+  ---------*/
+.content h1{margin: 20px 0;text-align: center}
+.content input,.content span{display: block;}
+.content input{width: 75%;height: 45px;line-height: 45px;padding-left: 15px;margin: 15px auto;}
+.content span{width: 40%;text-align: center;height: 40px;line-height: 40px;margin: 25px auto;border: 1px solid #aaa;
+    color: #4F3F33;border-radius: 5px;background: #fff;cursor: pointer}
+.get-tips{color: #E72D42;font-size: 14px;line-height: 20px;width: 75%;margin: 35px auto;text-align: center}
