@@ -178,29 +178,36 @@
         url:"weixin?action=getData",
         dataType:"json",
         success:function (json) {//json存储success和data
-            if(json.success == 1){
-                var data = json.userList;//data存放邀请人与被邀请人数据
-                var htmls=[];
-                var hasAuth=0;//计数已经认证的个数
-                if(data.length>0){
-                    for(var i=0;i<data.length;i++)
-                    {
-                        var obj=data[i];//第i个被邀请人实体：（手机号码，是否认证）
+            if($("#ID").val()=="")
+            {
+                $("#invitationList").html("");
+                $("#totalMoney").html("0");
+                $("#totalPerson").html("0");
+            }else {
+                if(json.success == 1){
+                    var data = json.userList;//data存放邀请人与被邀请人数据
+                    var htmls=[];
+                    var hasAuth=0;//计数已经认证的个数
+                    if(data.length>0){
+                        for(var i=0;i<data.length;i++)
+                        {
+                            var obj=data[i];//第i个被邀请人实体：（手机号码，是否认证）
 
-                        if(obj.awardStatus==1)//已认证
-                        {
-                            hasAuth++;
-                            htmls.push('<li class="box-content"><span>'+ obj.mobile +'</span><span>50元</span></li>');
-                        } else if (obj.awardStatus==0)//未认证
-                        {
-                            htmls.push('<li class="box-content" style="color: #530d0d"><span>' + obj.mobile + '</span><span>50元<i class="noAuth">未认证</i></span></li>');
+                            if(obj.awardStatus==1)//已认证
+                            {
+                                hasAuth++;
+                                htmls.push('<li class="box-content"><span>'+ obj.mobile +'</span><span>50元</span></li>');
+                            } else if (obj.awardStatus==0)//未认证
+                            {
+                                htmls.push('<li class="box-content" style="color: #530d0d"><span>' + obj.mobile + '</span><span>50元<i class="noAuth">未认证</i></span></li>');
+                            }
                         }
+                        $("#invitationList").after(htmls);
+                        $("#totalMoney").html(50*hasAuth);
+                        $("#totalPerson").html(hasAuth);
                     }
-                    $("#invitationList").after(htmls);
-                    $("#totalMoney").html(50*hasAuth);
-                    $("#totalPerson").html(hasAuth);
                 }
             }
-        },
+        }
     })
 })
