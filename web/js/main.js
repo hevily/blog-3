@@ -18,6 +18,10 @@
 //注销
     $("#ID-mobile i").click(function () {
         $("#ID").text("");
+        $("#invitationList").after("");
+        $("#totalMoney").html("0");
+        $("#totalPerson").html("0");
+        $(this).fadeOut(300);
     });
 
 //微信二维码弹窗
@@ -171,17 +175,18 @@
 
 
     //底部表格，被邀请人数据
-    $.ajax({
-        type:"get",
-        url:"weixin?action=getData",
-        dataType:"json",
-        success:function (json) {//json存储success和data
-            if($("#ID").text()=="")
-            {
-                $("#invitationList").html("");
-                $("#totalMoney").html("0");
-                $("#totalPerson").html("0");
-            }else {
+    if($("#ID").text()=="")
+    {
+        $("#invitationList").after("");
+        $("#totalMoney").html("0");
+        $("#totalPerson").html("0");
+    }
+    else {
+        $.ajax({
+            type:"get",
+            url:"weixin?action=getData",
+            dataType:"json",
+            success:function (json) {//json存储success和data
                 if(json.success == 1){
                     var data = json.userList;//data存放邀请人与被邀请人数据
                     var htmls=[];
@@ -206,6 +211,6 @@
                     }
                 }
             }
-        }
-    })
+        })
+    }
 })
