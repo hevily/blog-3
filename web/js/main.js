@@ -201,6 +201,7 @@
                         if(obj.awardStatus==1)//已认证
                         {
                             hasAuth++;
+                              htmls.push('<li class="box-content person-list"><span style="color:rgb( 51, 51, 51 )">'+ obj.mobile +'</span><span>50元</span></li>');
                            } else if (obj.awardStatus==0)//未认证
                          {
                               htmls.push('<li class="box-content person-list" style="color:#530d0d"><span style="color:rgb( 51, 51, 51 )">' + obj.mobile + '</span><span>50元<i class="noAuth">未认证</i></span></li>');
