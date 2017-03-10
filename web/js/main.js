@@ -24,6 +24,14 @@
         $(this).css("display","none");
     });
 
+     if($("#ID").text()="")
+     {
+         $("#ID-mobile i").css("display","none")
+     }
+     else {
+         $("#ID-mobile i").css("display","flex")
+     }
+
 //微信二维码弹窗
     $("#get-ewm").click(function () {
         $("#weChat-PoP").fadeIn(300);
@@ -70,7 +78,6 @@
                     {
                         if(data.code==1)//验证码正确
                         {
-                            $("#ID-mobile i").css("display","flex");
                             if(order==1){//立即认证按钮
                                 $("#form-PoP").fadeOut();
                                 $("#submitPoP").fadeIn(300);
@@ -194,10 +201,9 @@
                         if(obj.awardStatus==1)//已认证
                         {
                             hasAuth++;
-                            htmls.push('<li class="box-content person-list"><span style="color:rgb( 51, 51, 51 )">'+ obj.mobile +'</span><span>50元</span></li>');
-                        } else if (obj.awardStatus==0)//未认证
-                        {
-                            htmls.push('<li class="box-content person-list" style="color:#530d0d"><span style="color:rgb( 51, 51, 51 )">' + obj.mobile + '</span><span>50元<i class="noAuth">未认证</i></span></li>');
+                           } else if (obj.awardStatus==0)//未认证
+                         {
+                              htmls.push('<li class="box-content person-list" style="color:#530d0d"><span style="color:rgb( 51, 51, 51 )">' + obj.mobile + '</span><span>50元<i class="noAuth">未认证</i></span></li>');
                         }
                     }
                     $("#invitationList").after(htmls);
