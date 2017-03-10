@@ -70,6 +70,7 @@
                     {
                         if(data.code==1)//验证码正确
                         {
+                            $("#ID-mobile i").css("display","flex");
                             if(order==1){//立即认证按钮
                                 $("#form-PoP").fadeOut();
                                 $("#submitPoP").fadeIn(300);
@@ -192,10 +193,10 @@
                         if(obj.awardStatus==1)//已认证
                         {
                             hasAuth++;
-                            htmls.push('<li class="box-content person-list"><span>'+ obj.mobile +'</span><span>50元</span></li>');
+                            htmls.push('<li class="box-content person-list"><span style="color:rgb( 51, 51, 51 )">'+ obj.mobile +'</span><span>50元</span></li>');
                         } else if (obj.awardStatus==0)//未认证
                         {
-                            htmls.push('<li class="box-content person-list" style="color: #530d0d"><span>' + obj.mobile + '</span><span>50元<i class="noAuth">未认证</i></span></li>');
+                            htmls.push('<li class="box-content person-list" style="color:#530d0d"><span style="color:rgb( 51, 51, 51 )">' + obj.mobile + '</span><span>50元<i class="noAuth">未认证</i></span></li>');
                         }
                     }
                     $("#invitationList").after(htmls);

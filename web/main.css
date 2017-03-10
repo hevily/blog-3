@@ -21,7 +21,7 @@ header img{width: 100%;font-size: 0;}
     margin-right: 10px}
 .ID-mobile{margin-right: 10px;color: rgb( 51, 51, 51 );font-weight: bold;height: 30px;padding: 5px 0;line-height: 30px;}
 .ID-mobile i{color:  rgb( 255, 144, 0 );padding: 2px 4px;border: 1px solid  rgb( 255, 144, 0 );font-weight: 100;
-    font-style: normal;line-height: 12px;margin-left: 10px;height: 12px}
+    font-style: normal;line-height: 12px;margin-left: 10px;height: 12px;display: none}
 .get-ewm{color: #fff;background:#DD5954;padding: 3px 8px;box-shadow: 3px 3px 1px #A00019;  -moz-box-shadow:3px 3px 1px #A00019;
     -webkit-box-shadow:3px 3px 1px #A00019;}
 /*----------

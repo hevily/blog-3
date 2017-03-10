@@ -18,7 +18,7 @@
         <img srcset="img/icon_banner@1X.jpg" alt="banner" />
     </picture>
     <div class="header-bottom">
-        <div class="ID-mobile" id="ID-mobile">当前分享号码：<span id="ID">${pMobile}</span><i>注销</i></div>
+        <div class="ID-mobile" id="ID-mobile">当前分享号码：<span id="ID" style="color: rgb( 51, 51, 51 )">${pMobile}</span><i>注销</i></div>
         <div class="get-ewm" id="get-ewm">获取公众号二维码</div>
     </div>
 </header>
