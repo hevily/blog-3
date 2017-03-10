@@ -158,14 +158,15 @@
         type:"get",
         url:"weixin?action=down",//判断设备并返回参数
         success:function (link) {
-            if(link==2)//安卓
-            {
-                $("#downAPP").attr("href","http://139.196.198.75:11024/pcbfzb/resource/androidApp/batzb.apk");
-            }
-            else if(link==1)//iphone
-            {
-                $("#downAPP").attr("href","https://www.pgyer.com/aShZ");
-            }
+            // if(link==2)//安卓
+            // {
+            //     $("#downAPP").attr("href","http://139.196.198.75:11024/pcbfzb/resource/androidApp/batzb.apk");
+            // }
+            // else if(link==1)//iphone
+            // {
+            //     $("#downAPP").attr("href","https://www.pgyer.com/aShZ");
+            // }
+            $("#downAPP").attr("href","http://a.app.qq.com/o/simple.jsp?pkgname=com.daguo.bat");
         }
     })
 
