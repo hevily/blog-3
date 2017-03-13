@@ -24,7 +24,7 @@
         $(this).css("display","none");
     });
 
-     if($("#ID").text()="")
+     if($("#ID").text()=="")
      {
          $("#ID-mobile i").css("display","none")
      }
