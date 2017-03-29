@@ -1,0 +1,151 @@
+/*----------
+    初始化
+  ---------*/
+*{padding: 0;margin: 0;border:0;box-sizing: border-box}
+html,body{font-family:"Helvetica neue",Helvetica,Tahoma,"lantinghei sc","Microsoft Yahei",sans-serif;color: #333;}
+i{display: inline-block;}
+ul,li{list-style-type: none}
+select{appearance:none; -moz-appearance:none;-webkit-appearance:none;}
+a{text-decoration: none;}
+input[type=button], input[type=submit], input[type=file], button{cursor: pointer;-webkit-appearance: none;outline: 0;}
+.clearfix:after{content: "";display: block;clear: both}
+img{width: 100%;font-size: 0;display: block}
+/*----------
+    header
+  ---------*/
+.header-top-wrap{background: url("../img/header-bg.jpg") repeat}
+.nav-wrap{background: url("../img/nav-bg.jpg") repeat;background-size: contain;min-width: 1100px;}
+.header-bottom-wrap{background: url("../img/bg.jpg") repeat}
+.header-top{position: relative;width: 1100px;margin: auto}
+.header-top img{font-size: 0;width: 100%;height: 200px;}
+.banner-words{position: absolute;top: 40px;color: #fff;left: 60px;line-height: 30px;font-size: 15px;}
+.nav{line-height: 50px;width: 1100px;margin: auto;background: url("../img/nav_bg.png") no-repeat ;background-size: cover;text-align: center}
+.nav li{display: inline-block}
+.nav li a{height: 50px;width: 140px;text-align: center;display: inline-block;color: #939789;border-radius: 5px;}
+.Album{float: left;width: 60%;}
+.Diary{float: right;width: 38%;position: relative}
+.Diary img{width: 100%}
+.Diary p{position: absolute;top: 100px;right: 70px;color: #fff;width: 50%;}
+.Album-left{float: left;width: 80%;position: relative;}
+.Album-left img{width: 528px;height: 300px;}
+.Album-left ul{height: 300px;}
+.Album-left li{position: absolute;display: none}
+.Album-right{float: left;width: 20%;position: relative}
+.Album-right li{padding: 5px 0;cursor: pointer}
+.Album-right li img{height: 50px;width: 100px;margin: auto}
+.Album-right .hover-bg{position: absolute;transition: all 0.5s;cursor: pointer;top: 0;left: 1px}
+.Album-right i{position: absolute;}
+.header-bottom{width:1100px;margin: auto;}
+/*----------
+   main
+  ---------*/
+main{background: url("../img/bg.jpg") repeat;min-width: 1100px;}
+.main-wrap{width: 1100px;margin: auto;padding-top: 15px;}
+.main-left{float: left;width: 70%;padding-right: 2%;}
+.h1{font-size:16px;height: 35px;line-height:35px;color:#ccc;margin-bottom: 15px;background: url("../img/status-bg.png") no-repeat;width:200px;background-size: 100%;text-align: center}
+article{border-bottom:2px solid #eee;margin-bottom: 20px;padding: 15px;}
+.article-bg{width: 25%;height: 140px;float: left;}
+.article-bg img{height: 100%;border: 1px solid #fffd73;}
+.article-content{float: right;width: 72%;}
+.article-content header h3{font-size: 16px;height: 20px;line-height: 20px;color: #ffb600;}
+.article-content header p{color:#ac8b72;font-size: 14px;padding: 10px 0;}
+.article-content header p a{color:#fffd73;font-style:italic}
+.article-content header p span:last-child{float: right;}
+.article-content .p-bottom{line-height: 24px;font-size: 14px;height: 72px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;color:#ac8b72;}
+.main-right{float: right;width: 28%;}
+.common{padding-bottom: 20px;}
+.about img{height: 250px;width: 180px;border: 1px solid #fffd73;}
+.about p{color:#ac8b72;font-size: 14px;line-height: 30px;font-style: italic}
+.Article{position: relative}
+.Article .Article-list li a{display: block;color:#ac8b72;font-size: 15px;padding-left: 25px;border-bottom: 1px solid #eee;}
+.Article .number{position: absolute;top: 50px;color:#ac8b72;}
+.Article li{margin-bottom: 5px;}
+.number li,.Article ul a{height: 30px;line-height: 30px;}
+.number li{width: 20px;text-align: center;border-radius: 2px;}
+.one{}
+/*----------
+    animation
+  ---------*/
+/* 淡入-从左 */
+.a-fadeinL{-webkit-animation:2s ease backwards;-moz-animation:2s ease backwards;
+    -ms-animation:2s ease backwards;animation:2s ease backwards;-webkit-animation-name:fadeinL;-moz-animation-name:fadeinL;-ms-animation-name:fadeinL;animation-name:fadeinL;}
+@-webkit-keyframes fadeinL{
+    0%{opacity:0;-webkit-transform:translateX(-50px);}
+    100%{opacity:0.8;-webkit-transform:translateX(0);}
+}
+@-moz-keyframes fadeinL{
+    0%{opacity:0;-moz-transform:translateX(-50px);}
+    100%{opacity:0.8;-moz-transform:translateX(0);}
+}
+@-ms-keyframes fadeinL{
+    0%{opacity:0;-ms-transform:translateX(-50px);}
+    100%{opacity:0.8;-ms-transform:translateX(0);}
+}
+@keyframes fadeinL{
+    0%{opacity:0;transform:translateX(-50px);}
+    100%{opacity:0.8;transform:translateX(0);}
+}
+
+.fadeIn{-webkit-animation:2s  backwards;-moz-animation:2s  backwards;
+    -ms-animation:2s  backwards;animation:2s  backwards;-webkit-animation-name:fadein;-moz-animation-name:fadein;-ms-animation-name:fadein;animation-name:fadein;}
+@keyframes fadein{
+    0%{opacity:0;}
+    20%{opacity:0.3;}
+    40%{opacity:0.5;}
+    60%{opacity:0.8;}
+    70%{opacity:0.5;}
+    80%{opacity:1;}
+    90%{opacity:0.5;}
+    100%{opacity:1;}
+}
+@-webkit-keyframes fadein{
+    0%{opacity:0;}
+    20%{opacity:0.3;}
+    40%{opacity:0.5;}
+    60%{opacity:0.8;}
+    70%{opacity:0.5;}
+    80%{opacity:1;}
+    90%{opacity:0.5;}
+    100%{opacity:1;}
+}
+@-moz-keyframes fadein{
+    0%{opacity:0;}
+    20%{opacity:0.3;}
+    40%{opacity:0.5;}
+    60%{opacity:0.8;}
+    70%{opacity:0.5;}
+    80%{opacity:1;}
+    90%{opacity:0.5;}
+    100%{opacity:1;}
+}
+@-ms-keyframes fadein{
+    0%{opacity:0;}
+    20%{opacity:0.3;}
+    40%{opacity:0.5;}
+    60%{opacity:0.8;}
+    70%{opacity:0.5;}
+    80%{opacity:1;}
+    90%{opacity:0.5;}
+    100%{opacity:1;}
+}
+.page1_1{
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    -o-animation-delay:0.5s;
+    -ms-animation-delay: 0.5s;
+    animation-delay:0.5s;
+}
+.page1_2{
+    -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+    -o-animation-delay:3s;
+    -ms-animation-delay: 3s;
+    animation-delay:3s;
+}
+.page1_3{
+    -webkit-animation-delay: 5.5s;
+    -moz-animation-delay: 5.5s;
+    -o-animation-delay:5.5s;
+    -ms-animation-delay: 5.5s;
+    animation-delay:5.5s;
+}
