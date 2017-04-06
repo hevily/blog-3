@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script src="js/mui.dtpicker.js"></script>
+		<script src="js/mui.picker.all.js"></script>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/mui.picker.css" />
+		<link rel="stylesheet" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" href="css/mui.dtpicker.css" />
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+			$(function() {
+				$("#test").click(function() {
+					mui("#sheet1").popover('toggle');
+				});
+			})
+		</script>
+		<style type="text/css">
+			#test {
+				width: 100px;
+				height: 30px;
+				background: #ccc;
+				margin: auto;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button id="backBtn" type="button" class="mui-btn mui-btn-blue mui-btn-block">返回</button>
+		<script type="text/javascript">
+			$("#backBtn").click(function  () {
+				mui.openWindow({
+					url:'index.html',
+					createNew:false
+				})
+			})
+		</script>
+		<!--maccordion折叠面板-->
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell mui-collapse">
+				<a class="mui-table-view-cell" href="#">无折叠面板</a>
+			</li>
+			<li class="mui-table-view-cell mui-collapse mui-active">
+				<a class="mui-navigate-right" href="#">默认展开的折叠面板</a>
+				<div class="mui-collapse-content">
+					<p>子内容</p>
+				</div>
+			</li>
+			<li class="mui-table-view-cell mui-collapse">
+				<a class="mui-navigate" href="#">无icon面板</a>
+				<div class="mui-collapse-content">
+					<p>面板3子内容</p>
+				</div>
+			</li>
+		</ul>
+		<hr />
+		<!--actionsheet操作表底部弹窗-->
+		<div id="test">actionsheet</div>
+		<div id="sheet1" class="mui-popover mui-popover-top mui-popover-action ">
+			<!-- 可选择菜单 -->
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#">1菜单1</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a href="#">2菜单2</a>
+				</li>
+			</ul>
+			<!-- 取消菜单 -->
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#sheet1"><b>3取消</b></a>
+				</li>
+			</ul>
+		</div>
+		<hr />
+		<!--mbadge数字角标-->
+		<span class="mui-badge">1</span>
+		<span class="mui-badge mui-badge-primary">12</span>
+		<span class="mui-badge mui-badge-success">123</span>
+		<span class="mui-badge mui-badge-warning">3</span>
+		<span class="mui-badge mui-badge-danger">45</span>
+		<span class="mui-badge mui-badge-purple">456</span>
+		<hr />
+		<div class="mui-content">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					Item1
+					<span class="mui-badge mui-badge-primary">1</span>
+				</li>
+				<li class="mui-table-view-cell">
+					Item1
+					<span class="mui-badge mui-badge-success">2</span>
+				</li>
+			</ul>
+		</div>
+		<hr />
+		<!--按钮-->
+		<button class="mui-btn-primary">蓝色按钮</button>
+		<button class="mui-btn-primary mui-btn-outlined">无底色</button>
+		<button class="mui-btn mui-btn-outlined">默认按钮</button>
+		<!--加载中按钮-->
+		<button type="button" class="mui-btn mui-btn-blue" data-loading-text="加载中">文字</button>
+		<button class="mui-btn-green mui-btn" data-loading-icon-position="right">icon位置</button>
+		<button class="mui-btn-danger" id="btn1">还原</button>
+		<script type="text/javascript">
+			//  	mui(document.body).on('tap','.mui-btn',function(e) {
+			//    		mui(this).button("loading");
+			//    	});
+			//    	$("#btn1").click(function () {
+			//    		mui(".mui-btn").button('reset');
+			//    	})
+		</script>
+		<!--cardview卡片视图-->
+		<div class="mui-card">
+			<div class="mui-card-header mui-card-media">
+				<img src="img/s-b5.jpg" />
+				<div class="mui-media-body">
+					小A
+					<p>发表于 2016-06-06 15：30</p>
+				</div>
+			</div>
+			<div class="mui-card-content mui-card-media" style="background-image: url(img/s-b5.jpg);height: 200px;">
+			</div>
+			<div class="mui-card-footer">
+				<a href="#" class="mui-card-link">like</a>
+				<a href="#" class="mui-card-link">Comment</a>
+				<a href="#" class="mui-card-link">Read more</a>
+			</div>
+		</div>
+		<!--mcheckbox复选框-->
+		<div class="mui-input-row mui-checkbox mui-left">
+			<label>icon位于左边</label>
+			<input name="Checkbox1" type="checkbox" checked>
+		</div>
+		<div class="mui-input-row mui-checkbox mui-left">
+			<label>禁用 disabled</label>
+			<input name="Checkbox2" type="checkbox" checked disabled>
+		</div>
+		<!--dialog-->
+		<div id="dialogDemo">
+			<button stype="button" class="mui-btn-primary " id="alertBtn ">警告框</button>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				$("#dialogDemo").click(function() {
+					mui.prompt('text', 'defaultText', 'title', ['取消', '确认'], function(e) {
+						e.index
+					}, 'div')
+					document.querySelector('.mui-popup-input input').value = "1";
+				})
+			})
+			//$("#dialogDemo").click(function  () {
+			//mui.toast('message',{duration:'long',type:'div'})
+			//})
+		</script>
+		<!--图片轮播-->
+		<div id="slider" class="mui-slider">
+			<div class="mui-slider-group mui-slider-loop">
+				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="img/s-banner4.jpg">
+					</a>
+				</div>
+				<!-- 第一张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="img/s-banner1.jpg">
+					</a>
+				</div>
+				<!-- 第二张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="img/s-banner2.jpg">
+					</a>
+				</div>
+				<!-- 第三张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="img/s-banner3.jpg">
+					</a>
+				</div>
+				<!-- 第四张 -->
+				<div class="mui-slider-item">
+					<a href="#">
+						<img src="img/s-banner4.jpg">
+					</a>
+				</div>
+				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#">
+						<img src="img/s-banner1.jpg">
+					</a>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			mui('.mui-slider').slider({
+				interval: 1000
+			});
+		</script>
+		<!--grid栅格-->
+		<div class="mui-content">
+			<div class="mui-row">
+				<div class="mui-col-sm-6 mui-col-xs-12" style="padding-right: 12px;">
+					<li class="mui-table-view-cell">
+						<a href="#" class="mui-navigate-right">itme1</a>
+					</li>
+				</div>
+				<div class="mui-col-sm-6 mui-col-xs-12">
+					<li class="mui-table-view-cell">
+						<a href="#" class="mui-navigate-right">itme2</a>
+					</li>
+				</div>
+			</div>
+		</div>
+		<!--icon-->
+		<p><span class="mui-icon mui-icon-weixin"></span>icon</p>
+		<!--input表单-->
+		<div class="mui-card" id="demo">
+			<div class="mui-input-group">
+				<div class="mui-input-row">
+					<label>用户名</label>
+					<input type="text" class="mui-input-clear" placeholder="请输入用户名" />
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input type="password" class="mui-input-password" placeholder="请输入密码" />
+				</div>
+				<div class="mui-input-row mui-search">
+					<input type="search" class="mui-input-clear" placeholder="" />
+				</div>
+				<div class="mui-button-row">
+					<button type="button" class="mui-btn mui-btn-primary">确认</button>
+					<button type="button" class="mui-btn mui-btn-danger">取消</button>
+				</div>
+				<div class="mui-input-row">
+					<input type="text" class="mui-input-speech" />
+				</div>
+				<div class="mui-button-row">
+					<button type="button" class="mui-btn mui-btn-blue" id="submit">提交</button>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//循环校验字段不能为空
+			$("#submit").click(function() {
+				var check = true;
+				mui("#demo input").each(function() {
+					if(!this.value || this.value.trim() == "") {
+						mui.alert($(this).siblings().text() + "不能为空");
+						check = false;
+						//跳出循环
+						return false;
+					}
+				});
+				if(check) {
+					mui.alert("验证通过")
+				}
+			})
+		</script>
+		<!--list列表-->
+		<!--普通列表-->
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell">普通列表</li>
+		</ul>
+		<style type="text/css">
+			/*点击事件*/
+			
+			.mui-table-view-cell.mui-active {
+				background-color: #0062CC;
+				color: #fff;
+			}
+		</style>
+		<!--右侧添加数字角标等控件-->
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell">
+				右侧添加角标
+				<span class="mui-badge mui-badge-blue">1</span>
+			</li>
+			<li class="mui-table-view-cell">
+				<span class="mui-navigate-right">右侧添加箭头</span>
+			</li>
+		</ul>
+		<!--media list图文列表-->
+		<ul class="mui-table-view">
+			<li class="mui-media mui-table-view-cell">
+				<a href="#">
+					<img src="img/s-b5.jpg" class="mui-media-object mui-pull-left" />
+					<div class="mui-media-body">
+						图文列表
+						<p class="mui-ellipsis">能和心爱的人在一起是一件多么幸福的事情</p>
+					</div>
+				</a>
+			</li>
+			<li class="mui-media mui-table-view-cell">
+				<a href="#">
+					<img src="img/s-b5.jpg" class="mui-media-object mui-pull-left" />
+					<div class="mui-media-body">
+						图文列表
+						<p class="mui-ellipsis">能和心爱的人在一起是一件多么幸福的事情</p>
+					</div>
+				</a>
+			</li>
+		</ul>
+		<!--遮罩蒙版-->
+		<button type="button" class="mui-btn mui-btn-blue" id="mask">蒙版弹窗</button>
+		<script type="text/javascript">
+			$("#mask").click(function() {
+				var mask = mui.createMask(function() {})
+				mask.show()
+			})
+		</script>
+		<!--numbox数字输入框-->
+		<div class="mui-numbox" data-numbox-min="0" data-numbox-max="10" id="testNum">
+			<button type="button" class="mui-btn mui-btn-numbox-minus">-</button>
+			<input type="number" class="mui-numbox-input" />
+			<button type="button" class="mui-btn mui-numbox-btn-plus">+</button>
+		</div>
+		<button type="button" class="mui-btn " id="getValue">获取值</button>
+		<script type="text/javascript">
+			$("#getValue").click(function() {
+				//获取numbox值
+				var getVal = mui("#testNum").numbox().getValue();
+				mui.toast('当前值:' + getVal);
+				//设置步长
+				// mui("#testNum").numbox().setOption('step',5);
+				//设置新值
+				//mui("#testNum").numbox().setValue(5);
+			})
+		</script>
+		<!--侧滑导航-->
+		<!-- 主界面菜单同时移动 -->
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable">
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 菜单容器 -->
+				<aside class="mui-off-canvas-left" id="offCanvasSide">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<!-- 菜单具体展示内容 -->
+							<button type="button" class="mui-btn mui-btn-blue" id="slideBtn2">判断是否已经滑动</button>
+						</div>
+					</div>
+				</aside>
+				<!-- 主页面标题 -->
+				<header class="mui-bar mui-bar-nav">
+					<a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left" href="#offCanvasSide" id="testSlide"></a>
+					<h1 class="mui-title">标题</h1>
+				</header>
+				<nav class="mui-bar mui-bar-tab">
+					<a class="mui-tab-item mui-active">
+						<span class="mui-icon mui-icon-home"></span>
+						<span class="mui-tab-label">首页</span>
+					</a>
+					<a class="mui-tab-item">
+						<span class="mui-icon mui-icon-phone"></span>
+						<span class="mui-tab-label">电话</span>
+					</a>
+					<a class="mui-tab-item">
+						<span class="mui-icon mui-icon-email"></span>
+						<span class="mui-tab-label">邮件</span>
+					</a>
+					<a class="mui-tab-item">
+						<span class="mui-icon mui-icon-gear"></span>
+						<span class="mui-tab-label">设置</span>
+					</a>
+				</nav>
+				<!-- 主页面内容容器 -->
+				<div class="mui-content mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<!-- 主界面具体展示内容 -->
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$("#testSlide").click(function() {
+				//操作侧滑菜单
+				mui(".mui-off-canvas-wrap").offCanvas('show');
+			})
+			//监听滑动
+			document.querySelector('.mui-off-canvas-wrap').addEventListener('shown', function() {
+				mui.alert(' hasSlideLeft', '提示', '确认', function(e) {
+					e.index
+				}, 'div')
+			})
+			//判断是否显示，如果要判断方向加上参数left/right
+			$("#slideBtn2").click(function() {
+				if(mui(".mui-off-canvas-wrap").offCanvas().isShown('left')) {
+					mui.alert('hasSlideLef', '提示', '确认', function(e) {
+						e.index
+					}, 'div')
+				} else {
+					mui.alert('noSlide', '提示', '确认', function(e) {
+						e.index
+					}, 'div')
+				}
+			})
+		</script>
+		<!--popover弹出菜单,代码块mpopover-->
+		<style type="text/css">
+			#popover {
+				height: 250px;
+				width: 200px;
+			}
+		</style>
+		<div id="popover" class="mui-popover">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<a href="javascript:void(0)">Item1</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="javascript:void(0)">Item2</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="javascript:void(0)">Item3</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a href="javascript:void(0)">Item4</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<a href="#popover" id="openPopover" class="mui-btn mui-btn-primary mui-btn-block">打开弹出菜单</a>
+		<!--picker选择器-->
+		<!--普通示例-->
+		<button id="FirstshowPicker" class="mui-btn mui-btn-block" type="button">一级选择示例 ...</button>
+		<script type="text/javascript">
+			$("#FirstshowPicker").click(function() {
+				//初始化poppicker组件
+				var picker = new mui.PopPicker();
+				//给picker对象添加数据，setData()支持的格式为数组
+				picker.setData([{
+					value: "first",
+					text: "第一项",
+				}, {
+					value: "second",
+					text: "第一项"
+				}, {
+					value: "third",
+					text: "第三项"
+				}, {
+					value: "fourth",
+					text: "第四项"
+				}, {
+					value: "fifth",
+					text: "第五项"
+				}, {
+					value: 'six',
+					text: '第六项'
+				}])
+				//设置默认选中项
+				//picker.pickers[0].setSelectedIndex(4,2000);
+				picker.pickers[0].setSelectedValue('forth', 2000);
+				//显示picker
+				picker.show(function(SelectedItem) {
+					//输出JSON格式数据
+					console.log(JSON.stringify(SelectedItem[0]));
+					//返回false阻止选择框的关闭
+					//return false;
+				});
+			})
+		</script>
+		<!--二级联示例-->
+		<button type="button" id="SecondShowPicker" class="mui-btn mui-btn-outlined mui-btn-blue mui-btn-block">二级联动示例</button>
+		<script type="text/javascript">
+			$("#SecondShowPicker").click(function() {
+				//初始化picker，layer显示列数
+				var picker = new mui.PopPicker({
+					layer: 2
+				});
+				picker.setData([{
+					value: '110000',
+					text: '北京市',
+					children: [{
+						value: "110101",
+						text: "东城区"
+					}]
+				}, {
+					value: '120000',
+					text: '天津市',
+					children: [{
+						value: "120101",
+						text: "和平区"
+					}, {
+						value: "120102",
+						text: "河东区"
+					}, {
+						value: "120104",
+						text: "南开区"
+					}]
+				}])
+				//设置参数：默认选中项, 过渡时间，回调函数
+				picker.pickers[0].setSelectedIndex(1, 200);
+				picker.pickers[1].setSelectedIndex(1);
+				picker.show(function(SelectedItem) {
+					//选中项的值设为button的值
+					$("#SecondShowPicker").text(SelectedItem[0].text + '' + SelectedItem[1].text);
+				});
+			})
+			//每次用完后释放组件资源
+			//picker.dispose();
+		</script>
+		<!--日期选择器-->
+		<button type="button" class="mui-btn-green mui-btn-outlined mui-btn-block" id="dataBtn">日期选择器</button>
+		<script type="text/javascript">
+			$("#dataBtn").click(function() {
+				//DtPicker参数
+				//1、type：设置视图类型；JSON格式；可选值：datatime[年月日时分]、date[年月日]、time[时分]、month[年月]、hour[年月日时]
+				//2、customData：设置日期内容;JSON格式；customData值生效的前提需要有指定的日期视图,如设置'y',需要在视图使用'年'视图
+				//3、labels：设置默认标签名字，Array格式；可设置["年"、"月"、"日"、"时"、"份"]
+				//4、beginDate/endDate:设置开始时间和结束时间，如果已经设置customData则无效
+				// 初始化日期选择器
+				var dtPicker = new mui.DtPicker({
+					"type": 'date',
+					"customData": {
+						"y": [
+							{ value: "2001", text: "2001" },
+							{ value: "2002", text: "2002" },
+							{ value: "2003", text: "2003" },
+							{ value: "2004", text: "2004" },
+							{ value: "2005", text: "2005" },
+							{ value: "2006", text: "2006" },
+							{ value: "2007", text: "2007" },
+							{ value: "2008", text: "2008" },
+							{ value: "2009", text: "2009" },
+							{ value: "2010", text: "2010" },
+							{ value: "2011", text: "2011" },
+							{ value: "2012", text: "2012" },
+							{ value: "2013", text: "2013" },
+							{ value: "2014", text: "2014" },
+							{ value: "2015", text: "2015" },
+							{ value: "2016", text: "2016" },
+							{ value: "2017", text: "2017" },
+						],
+						"m": [
+							{ value: "1", text: "1" },
+							{ value: "2", text: "2" },
+							{ value: "3", text: "3" },
+							{ value: "3", text: "4" },
+							{ value: "3", text: "5" },
+							{ value: "3", text: "6" },
+							{ value: "3", text: "7" },
+							{ value: "3", text: "8" },
+							{ value: "3", text: "9" },
+							{ value: "3", text: "10" },
+							{ value: "3", text: "11" },
+							{ value: "3", text: "12" }
+						]
+					},
+					"labels": ["年份", "月份"],
+					"beginDate": new Date(2015, 04),
+					"endDate": new Date(2017, 11)
+				});
+				//输出选中项的值
+				dtPicker.show(function(selectItems) {
+					console.log('年份：' + selectItems.y.text + ' ' + '月份：' + selectItems.m.text);
+				})
+			})
+		</script>
+		<style type="text/css">
+			/*自定义显示视图日期数据*/
+			/*将date年月日改成年月*/
+			
+			[data-type="date"] .mui-picker,
+			[data-type="date"] .mui-dtpicker-title h5 {
+				width: 50%;
+			}
+			
+			[data-type="date"] [data-id="picker-d"],
+			[data-type="date"] [data-id="title-d"] {
+				display: none;
+			}
+		</style>
+		<!--mpeogressbar进度条-->
+		<!--1、有准确值的进度条-->
+		<div class="bar-wrap">
+			<div id="demo1" class="mui-progressbar">
+				<span></span>
+			</div>
+		</div>
+		<button id="barBtn1" type="button" class="mui-btn mui-btn-blue mui-btn-outlined">50</button>
+		<button id="barBtn2" type="button" class="mui-btn mui-btn-blue mui-btn-outlined">100</button>
+		<button id="barBtn3" type="button" class="mui-btn mui-btn-danger mui-btn-outlined">关闭进度条</button>
+		<script>
+			//显示进度条
+			mui("#demo1").progressbar({ progress: 20 }).show();
+			//更改进度条
+			$("#barBtn1").click(function() {
+				mui("#demo1").progressbar().setProgress(50);
+			});
+			$("#barBtn2").click(function() {
+				mui("#demo1").progressbar().setProgress(100);
+			});
+			//关闭进度条;用于删除动态生成的DOM节点
+			$("#barBtn3").click(function() {
+				mui("#demo1").progressbar().hide();
+			})
+		</script>
+		<style type="text/css">
+			#barBtn1,
+			#barBtn2,
+			#barBtn3 {
+				margin: 10px 0;
+			}
+		</style>
+		<!--2、无限循环进度条-->
+		<div class="bar-wrap2">
+			<div id="demo2" class="mui-progressbar mui-progressbar-infinite">
+				<span></span>
+			</div>
+		</div>
+		<script>
+			mui("#demo2").progressbar().show();
+		</script>
+		<!--transparentBar透明状态栏-->
+		<header class="mui-bar mui-bar-nav mui-bar-transparent" data-top="0" data-offset="50" data-duration="16">
+			<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				<div class="mui-scroll">
+					<a class="mui-control-item mui-active">
+						UI组件
+					</a>
+					<a class="mui-control-item">
+						窗口管理
+					</a>
+					<a class="mui-control-item">
+						北京
+					</a>
+					<a class="mui-control-item">
+						社会
+					</a>
+					<a class="mui-control-item">
+						娱乐
+					</a>
+					<a class="mui-control-item">
+						科技
+					</a>
+				</div>
+			</div>
+		</header>
+		<script type="text/javascript">
+			//JS API 
+			mui(".mui-bar-transparent").transparent({
+				top: 0, //距离顶部高度
+				offset: 50, //滚动透明距离
+				duration: 16, //过渡时间
+				scrollby: document.querySelector('.mui-bar-wrapper')
+			})
+		</script>
+		<!--mradio单选框-->
+		<div class="mui-input-row mui-radio mui-left">
+			<label>Radio</label>
+			<input name="radio" type="radio" checked>
+		</div>
+		<div class="mui-input-row mui-radio mui-left">
+			<label>Radio</label>
+			<input name="radio" type="radio" checked>
+		</div>
+		<!--列表单选-->
+		<ul class="mui-table-view mui-table-view-radio">
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">radio1</a>
+			</li>
+			<li class="mui-table-view-cell mui-selected">
+				<a class="mui-navigate-right">radio2</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">radio3</a>
+			</li>
+		</ul>
+		<script type="text/javascript">
+			//监听列表选择的内容
+			document.querySelector(".mui-table-view.mui-table-view-radio").addEventListener('selected', function(e) {
+				console.log(e.detail.el.innerText)
+			})
+		</script>
+		<!--mrange滑块-->
+		<div class="mui-input-row mui-input-range">
+			<label>range</label>
+			<input type="range" min="0" max="100">
+		</div>
+		<!--mscrollsegmented区域滚动-->
+		<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			<div class="mui-scroll">
+				<a class="mui-control-item mui-active">
+					推荐
+				</a>
+				<a class="mui-control-item">
+					热点
+				</a>
+				<a class="mui-control-item">
+					北京
+				</a>
+				<a class="mui-control-item">
+					社会
+				</a>
+				<a class="mui-control-item">
+					娱乐
+				</a>
+				<a class="mui-control-item">
+					科技
+				</a>
+			</div>
+		</div>
+		<style type="text/css">
+			body {
+				margin-top: 50px;
+			}
+		</style>
+		<!--mslider轮播组件-->
+		<div class="mui-slider" id="info">
+			<div class="mui-slider-group">
+				<!--第一个内容区容器-->
+				<div class="mui-slider-item">
+					<img src="img/s-banner1.jpg" />
+					<!-- 具体内容 -->
+				</div>
+				<!--第二个内容区-->
+				<div class="mui-slider-item" id="item2">
+					<img src="img/s-banner2.jpg" />
+					<!-- 具体内容 -->
+				</div>
+				<div class="mui-slider-item" id="item3">
+					<img src="img/s-banner3.jpg" />
+					<!-- 具体内容 -->
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//判断显示的选项卡索引
+			document.querySelector('#info').addEventListener('slide', function(event) {
+				console.log(event.detail.slideNumber + 1);
+			});
+		</script>
+		<!--switch开关-->
+		    <div class="mui-switch mui-active" id="mySwitch">
+		        <div class="mui-switch-handle"></div>
+		    </div>
+		    <div class="mui-switch mui-switch-blue mui-active">
+		    	<div class="mui-switch-handle"></div>
+		    </div>
+		    <div class="mui-switch">
+		    	<div class="mui-switch-handle"></div>
+		    </div>
+		    <div class="mui-switch mui-switch-mini">
+		    	<div class="mui-switch-handle"></div>
+		    </div>
+		    <button id="dor" type="button" class="mui-btn mui-btn-blue">判断开关状态</button>
+		    <script type="text/javascript">
+		    	//判断开关是否打开
+//		    	document.getElementById("dor").onclick=function  () {
+//		    		var isActive=document.getElementById("mySwitch").classList.contains("mui-active");
+//		    	if(isActive){
+//		    		console.log("打开");
+//		    	}else{
+//		    		console.log("关闭");
+//		    	}
+//		    	}
+                //监听开关状态
+		    	document.getElementById("mySwitch").addEventListener("toggle",function  (event) {
+		    		if(event.detail.isActive){
+		    			console.log("启动开关");
+		    		}else{
+		    			console.log("关闭开关");
+		    		}
+		    	})
+		    </script>
+	</body>
+</html>

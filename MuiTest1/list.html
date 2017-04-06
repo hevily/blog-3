@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script src="js/mui.picker.js"></script>
+		<script src="js/mui.picker.min.js"></script>
+		<script src="js/mui.dtpicker.js"></script>
+		<script src="js/mui.picker.all.js"></script>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/mui.picker.css" />
+		<link rel="stylesheet" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" href="css/mui.dtpicker.css" />
+	</head>
+
+	<body>
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">
+					子页面
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">
+					子页面
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right">
+					子页面
+				</a>
+			</li>
+		</ul>
+		<button id="backIndex" type="button" class="mui-btn mui-btn-blue mui-btn-block">返回主页</button>
+		<script type="text/javascript">
+			$("#showLink").click(function() {
+				alert("当前页面URL：" + plus.webview.currentWebview().getURL());
+			});
+			$("#backIndex").click(function() {
+				mui.openWindow({
+					url: 'index.html'
+				})
+			})
+		</script>
+	</body>
+
+</html>
