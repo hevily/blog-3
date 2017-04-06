@@ -10,6 +10,7 @@ a{text-decoration: none;}
 input[type=button], input[type=submit], input[type=file], button{cursor: pointer;-webkit-appearance: none;outline: 0;}
 .clearfix:after{content: "";display: block;clear: both}
 img{width: 100%;font-size: 0;display: block}
+body{background: url("../img/bg.jpg") repeat;}
 /*----------
     header
   ---------*/
@@ -19,9 +20,9 @@ img{width: 100%;font-size: 0;display: block}
 .header-top{position: relative;width: 1100px;margin: auto}
 .header-top img{font-size: 0;width: 100%;height: 200px;}
 .banner-words{position: absolute;top: 40px;color: #fff;left: 60px;line-height: 30px;font-size: 15px;}
-.nav{line-height: 50px;width: 1100px;margin: auto;background: url("../img/nav_bg.png") no-repeat ;background-size: cover;text-align: center}
+.nav{position:relative;line-height: 50px;width: 1100px;margin: auto;background: url("../img/nav_bg.png") no-repeat ;background-size: cover;text-align: center}
 .nav li{display: inline-block}
-.nav li a{height: 50px;width: 140px;text-align: center;display: inline-block;color: #939789;border-radius: 5px;}
+.nav li a{height: 50px;width: 140px;text-align: center;display: inline-block;color: #fff;}
 .Album{float: left;width: 60%;}
 .Diary{float: right;width: 38%;position: relative}
 .Diary img{width: 100%}
@@ -39,7 +40,7 @@ img{width: 100%;font-size: 0;display: block}
 /*----------
    main
   ---------*/
-main{background: url("../img/bg.jpg") repeat;min-width: 1100px;}
+main,footer{min-width: 1100px;}
 .main-wrap{width: 1100px;margin: auto;padding-top: 15px;}
 .main-left{float: left;width: 70%;padding-right: 2%;}
 .h1{font-size:16px;height: 35px;line-height:35px;color:#ccc;margin-bottom: 15px;background: url("../img/status-bg.png") no-repeat;width:200px;background-size: 100%;text-align: center}
@@ -53,7 +54,7 @@ article{border-bottom:2px solid #eee;margin-bottom: 20px;padding: 15px;}
 .article-content header p span:last-child{float: right;}
 .article-content .p-bottom{line-height: 24px;font-size: 14px;height: 72px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;color:#ac8b72;}
 .main-right{float: right;width: 28%;}
-.common{padding-bottom: 20px;}
+.common{margin-bottom: 30px;}
 .about img{height: 250px;width: 180px;border: 1px solid #fffd73;}
 .about p{color:#ac8b72;font-size: 14px;line-height: 30px;font-style: italic}
 .Article{position: relative}
@@ -63,6 +64,18 @@ article{border-bottom:2px solid #eee;margin-bottom: 20px;padding: 15px;}
 .number li,.Article ul a{height: 30px;line-height: 30px;}
 .number li{width: 20px;text-align: center;border-radius: 2px;}
 .one{}
+/*visitor*/ 
+.visitor li{width: 17%;float: left;margin:3%;}
+.visitor img{border-radius: 50%;border: 1px solid #fffd73;}
+footer{color: #fff;text-align: center;font: 18px;height: 20px;line-height: 20px;margin-bottom: 20px;}
+/*sortLinks*/
+.sortLinks li{width: 44%;float: left;margin:5px 3%;border-radius: 5px;}
+.sortLinks li a{color: #fff;width: 100%;display: inline-block;height: 50px;line-height: 50px;text-align: center;transition: transform 1s;}
+.sortLinks li:hover a{transform:rotate(360deg);}
+/*search*/
+.searchInput{position: relative;}
+.searchInput input{width: 90%;display: block;height: 50px;border: 1px solid #ccc;border-radius: 5px;text-align: center;font-size: 17px;}
+.searchInput i{background: url(../img/search.png) no-repeat center;display: block;height: 50px;width:45px;position: absolute;top: 0px;right:10%;cursor: pointer;}
 /*----------
     animation
   ---------*/
