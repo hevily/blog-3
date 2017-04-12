@@ -37,12 +37,146 @@
 						<p>我的排名：<i>10</i></p>
 						<p>累计<i>3</i>天，<i>0</i>分钟，完成<i>0</i>门课程</p>
 					</div>
-					<div href="" class="mui-pull-right"><a href="">排行榜</a></div>
+					<div href="" class="mui-pull-right">
+						<a href="">排行榜</a>
+					</div>
 				</div>
 				<div class="mui-table-view-cell Assessment">
-					<a href="" class="mui-navigate-right">我的考核</a>
+					<p class="mui-pull-left">我的考核</p>
+					<div class="mui-pull-right ">
+						<a href="" class="mui-icon mui-icon-arrowright"></a>
+					</div>
+				</div>
+				<div class="learn-state-wrap">
+					<div class="learn-state-title">
+						<p id="onprogressBtn" class="on">学习中</p>
+						<p id="hasfinishBtn">已完成</p>
+					</div>
+					<div class="mui-slider" style="position: relative;white-space: nowrap;">
+						<div class="mui-slider-group">
+							<!--第一个内容区容器-->
+							<div class="mui-slider-item">
+								<div class="learn-list-wrap mui-table-view" id="onProgress">
+									<div class=" mui-table-view-cell mui-media">
+										<img src="../img/s-banner2.jpg " class="mui-pull-left" />
+										<div class="mui-pull-right learn-bar">
+											<p class="learn-list-p">企业渗透测试全面面解析企业渗透测试全面面解析企业渗透测试面解析</p>
+											<div class="mui-progressbar">
+												<span></span>
+											</div>
+											<p class="learn-list-bar">学习进度<i>20%</i></p>
+										</div>
+									</div>
+									<div class=" mui-table-view-cell mui-media">
+										<img src="../img/s-banner2.jpg " class="mui-pull-left" />
+										<div class="mui-pull-right learn-bar">
+											<p class="learn-list-p">企业渗透测试全面面解析企业渗透测试全面面解析企业渗透测试面解析</p>
+											<div class="mui-progressbar">
+												<span></span>
+											</div>
+											<p class="learn-list-bar">学习进度<i>40%</i></p>
+										</div>
+									</div>
+									<div class=" mui-table-view-cell mui-media">
+										<img src="../img/s-banner2.jpg " class="mui-pull-left" />
+										<div class="mui-pull-right learn-bar">
+											<p class="learn-list-p">企业渗透测试全面面解析企业渗透测试全面面解析企业渗透测试面解析</p>
+											<div class="mui-progressbar">
+												<span></span>
+											</div>
+											<p class="learn-list-bar">学习进度<i>60%</i></p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--第二个内容区-->
+							<div class="mui-slider-item">
+								<div class="learn-list-wrap hasFinish" id="hasFinish">
+									<div class=" mui-table-view-cell mui-media">
+										<img src="../img/s-banner2.jpg " class="mui-pull-left" />
+										<div class="mui-pull-right learn-bar">
+											<p class="learn-list-p">企业渗透测试全面面解析企业渗透测试全面面解析企业渗透测试面解析</p>
+											<div class="mui-progressbar">
+												<span></span>
+											</div>
+											<p class="learn-list-bar">学习进度<i>100%</i></p>
+										</div>
+									</div>
+									<div class=" mui-table-view-cell mui-media">
+										<img src="../img/s-banner2.jpg " class="mui-pull-left" />
+										<div class="mui-pull-right learn-bar">
+											<p class="learn-list-p">企业渗透测试全面面解析企业渗透测试全面面解析企业渗透测试面解析</p>
+											<div class="mui-progressbar">
+												<span></span>
+											</div>
+											<p class="learn-list-bar">学习进度<i>100%</i></p>
+										</div>
+									</div>
+									<div class=" mui-table-view-cell mui-media">
+										<img src="../img/s-banner2.jpg " class="mui-pull-left" />
+										<div class="mui-pull-right learn-bar">
+											<p class="learn-list-p">企业渗透测试全面面解析企业渗透测试全面面解析企业渗透测试面解析</p>
+											<div class="mui-progressbar">
+												<span></span>
+											</div>
+											<p class="learn-list-bar">学习进度<i>100%</i></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</main>
+		<footer>
+			<a href=" " class="icon-class ">课程库</a>
+			<a href=" " class="icon-learn ">我的学习</a>
+		</footer>
+		<script type="text/javascript ">
+			$(function() {
+				for(i = 0; i < $(".learn-bar").length; i++) {
+					var speed = $('.learn-bar').eq(i).children('.learn-list-bar').children('i').text();
+					$('.learn-bar').eq(i).children('.mui-progressbar').children('span').css('left', speed);
+//					console.log(speed)
+				}
+				$("#onprogressBtn").click(function() {
+					$(".learn-state-title p").removeClass("on");
+					$(this).addClass("on");
+					$(".mui-slider-group").css('transform', 'translateX(0px)');
+				})
+				$("#hasfinishBtn").click(function() {
+
+					$(".learn-state-title p").removeClass("on");
+					$(this).addClass("on")
+					$(".mui-slider-group").css('transform', 'translateX(-375px)');
+				})
+//				mui('.mui-slider').slider().setStopped(true);
+				
+//				$('.mui-slider').on('slide', function(event) {
+//					if($("#onprogressBtn").hasClass('on'))
+//					{
+//						$(".learn-state-title p").removeClass("on");
+//					    $("#hasfinishBtn").addClass("on")
+//					}else
+//					{
+//						$(".learn-state-title p").removeClass("on");
+//					    $("#onprogressBtn").addClass("on")
+//					}
+////					if((event.detail.slideNumber+1)==1)
+////					{
+////						alert(event.detail.slideNumber+1)
+////						$(".learn-state-title p").removeClass("on");
+////					    $("#onprogressBtn").addClass("on")
+////					}else
+////					{
+////						alert(event.detail.slideNumber+1)
+////						$(".learn-state-title p").removeClass("on");
+////					    $("#hasfinishBtn").addClass("on")
+////					}
+//				});
+			})
+		</script>
 	</body>
 
 </html>
