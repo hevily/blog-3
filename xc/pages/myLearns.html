@@ -20,7 +20,7 @@
 			<h1 class="mui-title">我的学习</h1>
 			<a class="mui-pull-right mui-icon more-icon"><i></i><i></i><i></i></a>
 		</header>
-		<main class="mylearn-Main">
+		<main class="common-main">
 			<div class="user-info-wrap">
 				<div class="user-info-content">
 					<img src="../img/photo.jpg" alt="photo" />
@@ -126,57 +126,15 @@
 							</div>
 						</div>
 					</div>
+					<div class="noClass-wrap">
+						<p>暂无学习课程</p>
+					</div>
 				</div>
 			</div>
 		</main>
 		<footer>
-			<a href=" " class="icon-class ">课程库</a>
-			<a href=" " class="icon-learn ">我的学习</a>
+			<a href="course.html" class="icon-class" id="icon-class">课程库</a>
+			<a href="myLearns.html" class="icon-learn" id="icon-learn">我的学习</a>
 		</footer>
-		<script type="text/javascript ">
-			$(function() {
-				for(i = 0; i < $(".learn-bar").length; i++) {
-					var speed = $('.learn-bar').eq(i).children('.learn-list-bar').children('i').text();
-					$('.learn-bar').eq(i).children('.mui-progressbar').children('span').css('left', speed);
-//					console.log(speed)
-				}
-				$("#onprogressBtn").click(function() {
-					$(".learn-state-title p").removeClass("on");
-					$(this).addClass("on");
-					$(".mui-slider-group").css('transform', 'translateX(0px)');
-				})
-				$("#hasfinishBtn").click(function() {
-
-					$(".learn-state-title p").removeClass("on");
-					$(this).addClass("on")
-					$(".mui-slider-group").css('transform', 'translateX(-375px)');
-				})
-//				mui('.mui-slider').slider().setStopped(true);
-				
-//				$('.mui-slider').on('slide', function(event) {
-//					if($("#onprogressBtn").hasClass('on'))
-//					{
-//						$(".learn-state-title p").removeClass("on");
-//					    $("#hasfinishBtn").addClass("on")
-//					}else
-//					{
-//						$(".learn-state-title p").removeClass("on");
-//					    $("#onprogressBtn").addClass("on")
-//					}
-////					if((event.detail.slideNumber+1)==1)
-////					{
-////						alert(event.detail.slideNumber+1)
-////						$(".learn-state-title p").removeClass("on");
-////					    $("#onprogressBtn").addClass("on")
-////					}else
-////					{
-////						alert(event.detail.slideNumber+1)
-////						$(".learn-state-title p").removeClass("on");
-////					    $("#hasfinishBtn").addClass("on")
-////					}
-//				});
-			})
-		</script>
 	</body>
-
 </html>
