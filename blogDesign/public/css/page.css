@@ -24,7 +24,6 @@
     color:white;
 }
 .page .pageItemDisable{
-    border: solid thin #333;
+    border: solid thin #fff;
     margin: 5px;
-    background-color: #333;
 }
