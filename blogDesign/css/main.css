@@ -19,7 +19,7 @@ body{background: url("../img/bg.jpg") repeat;}
 .nav-wrap{background: url("../img/nav-bg.jpg") repeat;background-size: contain;min-width: 1100px;position: relative;}
 .header-bottom-wrap{background: url("../img/bg.jpg") repeat}
 .header-top{position: relative;width: 1100px;margin: auto}
-.header-top img{font-size: 0;width: 100%;height: 200px;}
+.header-top img{font-size: 0;width: 100%;height: 210px;}
 .banner-words{position: absolute;top: 40px;color: #fff;left: 60px;line-height: 30px;font-size: 15px;}
 .nav{position:relative;line-height: 45px;width: 1100px;margin: auto;text-align: center;}
 .nav-bg{position: absolute;width: 1100px;height: 45px;background: url("../img/nav_bg.png") no-repeat ;background-size: cover;left: 50%;margin-left: -550px;opacity:0.6;-moz-opacity:0.6;-khtml-opacity:0.6;filter:alpha(opacity=60);}
@@ -41,6 +41,20 @@ body{background: url("../img/bg.jpg") repeat;}
 .Album-right .hover-bg{position: absolute;transition: all 0.5s;cursor: pointer;top: 0;left: 1px}
 .Album-right i{position: absolute;}
 .header-bottom{width:1100px;margin: auto;}
+.loginIn{position: absolute;top: 0px;right: 30px;z-index: 222;}
+.loginImg{padding-left: 60px;width: 150px;}
+.loginImg img{width: 80px;height: 80px;border-radius: 50%;cursor: pointer;}
+.loginList{width: 150px;display: none;font-size: 14px;}
+.loginList li{line-height: 25px;background: url(../img/status-bg.png) no-repeat;margin: 6px 0;text-align: center;color: #FAFAFA;border-radius: 10px;position: relative;}
+.loginList li a{color: #FAFAFA;}
+.loginList li:hover{background: #CC9966;cursor: pointer;}
+.loginName{color: #fffd73 !important;margin-top: 8px !important;}
+.loginName:hover{background: url(../img/status-bg.png) no-repeat !important;cursor: pointer;}
+.personInfo:before,.changePwd:before,.exit:before{background:url(../img/loginlistIcon.png) no-repeat;content: '';display: block;position: absolute;left: 15px;top: 4px;width: 22px;height: 20px;}
+.personInfo:before{background-position: 0 -41px;}
+.changePwd:before{background-position: 0 -79px;}
+.exit:before{background-position: 0 -163px;}
+.loginName:before{background: url(../img/top.png) no-repeat;position: absolute;content: '';display: block;width: 20px;height:10px;top: -8px;right: 40px;opacity: 0.6;}
 /*----------
    main
   ---------*/
