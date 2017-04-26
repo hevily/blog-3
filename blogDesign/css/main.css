@@ -43,7 +43,7 @@ body{background: url("../img/bg.jpg") repeat;}
 .header-bottom{width:1100px;margin: auto;}
 .loginIn{position: absolute;top: 0px;right: 30px;z-index: 222;}
 .loginImg{padding-left: 60px;width: 150px;}
-.loginImg img{width: 80px;height: 80px;border-radius: 50%;cursor: pointer;}
+.loginImg img{width: 70px;height: 70px;border-radius: 50%;cursor: pointer;}
 .loginList{width: 150px;display: none;font-size: 14px;}
 .loginList li{line-height: 25px;background: url(../img/status-bg.png) no-repeat;margin: 6px 0;text-align: center;color: #FAFAFA;border-radius: 10px;position: relative;}
 .loginList li a{color: #FAFAFA;}
@@ -88,7 +88,7 @@ article:hover{border-bottom:2px solid #fff;}
 /*visitor*/ 
 .visitor li{width: 17%;float: left;margin:3%;}
 .visitor img{border-radius: 50%;border: 1px solid #fffd73;}
-footer{color: #fff;text-align: center;font: 18px;height: 20px;line-height: 20px;margin-bottom: 10px;}
+footer{color: #fff;text-align: center;font-size: 18px;height: 20px;line-height: 20px;margin-bottom: 10px;}
 /*sortLinks*/
 .sortLinks li{width: 44%;float: left;margin:5px 3%;border-radius: 5px;}
 .sortLinks li a{color: #fff;width: 100%;display: inline-block;height: 50px;line-height: 50px;text-align: center;transition: transform 1s;}
