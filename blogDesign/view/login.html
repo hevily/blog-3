@@ -4,124 +4,207 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>登录</title>
-		<link rel="stylesheet" type="text/css" href="../public/css/mui.min.css"/>
-		<link rel="stylesheet" type="text/css" href="../public/css/page.css"/>
+		<link rel="stylesheet" type="text/css" href="../public/css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/page.css" />
 		<link rel="stylesheet" href="../css/main.css">
 		<script src="../public/js/jquery-1.8.3.min.js"></script>
 		<script src="../public/js/page.js"></script>
 		<script src="../js/main.js"></script>
 		<style>
-          canvas{position: absolute;display: block;top: 0;width: 100%;}
+			canvas {
+				position: absolute;
+				display: block;
+				top: 0;
+				width: 100%;
+				z-index: -1;
+			}
+			.index-main-body{width: 300px;margin: auto;padding: 150px 0 102px;}
+			.sign-button{width: 100%;line-height: 41px;background: #0f88eb;color: #fff;padding: 0;}
+			.sign-button:hover{background:#55abed}
+			.index-tab-navs{margin-bottom: 10px;font-size: 18px;text-align: center;}
+			.index-header .subtitle {margin: 30px 0 20px;font-weight: 400;font-size: 18px;line-height: 1;}
+			.index-tab-navs .navs-slider {position: relative;display: inline-block;}
+			.index-tab-navs a {float: left;width: 4em;line-height: 35px;opacity: .7;-ms-filter: "alpha(Opacity=70)";-webkit-transition: opacity .15s,color .15s;transition: opacity .15s,color .15s;color: #333;}
+			.index-tab-navs a.active {opacity: 1;-ms-filter: "alpha(Opacity=100)";color: #0f88eb;}
+			.index-tab-navs .navs-slider .navs-slider-bar {position: absolute;left: 0;bottom: 0;margin: 0 .8em;width: 2.4em;height: 2px;background: #0f88eb;-webkit-transition: left .15s ease-in;transition: left .15s ease-in;font-size: 18px;text-align: center;}
+			.move{left: 4.5rem;}
 		</style>
 	</head>
+
 	<body style="background: none;">
-		<canvas id="canvas"></canvas>
+		<div class="index-main-body">
+			<div class="index-header">
+				<h1 class="logo">BLOG</h1>
+				<h2 class="subtitle">发现更大的世界</h2>
+			</div>
+			<div class="desk-front sign-flow clearfix sign-flow-simple">
+				<div class="index-tab-navs">
+					<div class="navs-slider">
+						<a href="#signup" class="">注册</a>
+						<a href="#signin" class="active">登录</a>
+						<span class="navs-slider-bar"></span>
+					</div>
+				</div>
+				<!--//login-->
+				<div class="view view-signin" data-za-module="SignInForm" style="display: block;">
+						<div class="group-inputs">
+							<div class="account input-wrapper">
+								<input type="text" name="account" aria-label="手机号或邮箱" placeholder="手机号或邮箱" required="">
+							</div>
+							<div class="verification input-wrapper">
+								<input type="password" name="password" aria-label="密码" placeholder="密码" required="">
+							</div>
+						</div>
+						<div class="button-wrapper command">
+							<a href="index.html"><button class="sign-button submit" type="submit">登录</button></a>
+						</div>
+						<div class="signin-misc-wrapper clearfix">
+							<a class="unable-login" href="#">忘记密码？</a>
+						</div>
+				</div>
+				<!--//register-->
+				<div class="view view-signup selected" data-za-module="SignUpForm" style="display: block;">
+						<div class="group-inputs">
+							<div class="name input-wrapper">
+								<input required="" type="text" name="fullname" aria-label="姓名" placeholder="姓名">
+							</div>
+							<div class="email input-wrapper">
+								<input required="" type="text" class="account" name="phone_num" aria-label="手机号" placeholder="手机号">
+							</div>
+							<div class="input-wrapper">
+								<input required="" type="password" name="password" aria-label="密码" placeholder="密码（不少于 6 位）" autocomplete="off">
+							</div>
+						</div>
+						<div class="button-wrapper command">
+							<button class="sign-button submit" type="submit">注册博客</button>
+						</div>
+				</div>
+				<!--//codes-->
+				
+			</div>
+		</div>
 		<footer style="color: #666;position: fixed;bottom: 20px;width: 100%;">
 			<p>©2017 Design by Gao</p>
 		</footer>
-	<script>
-		//定义画布宽高和生成点的个数
-		var WIDTH = window.innerWidth, HEIGHT = window.innerHeight, POINT = 35;
-		
-		var canvas = document.getElementById('canvas');
-		canvas.width = WIDTH,
-		canvas.height = HEIGHT;
-		var context = canvas.getContext('2d');
-		context.strokeStyle = 'rgba(0,0,0,0.02)',
-		context.strokeWidth = 1,
-		context.fillStyle = 'rgba(0,0,0,0.05)';
-		var circleArr = [];
+		<canvas id="canvas"></canvas>
+		<script>
+			var bodyHeight=$('body').height();
+			$('canvas').height(bodyHeight);
+			$(".navs-slider a").click(function  () {
+				$(".navs-slider a").removeClass('active');
+				$(this).addClass('active');
+				if($(".navs-slider span").css('left')=='0px')
+				{
+					$(".navs-slider span").addClass('move')
+				}
+				else
+				{
+					$(".navs-slider span").removeClass('move')
+				}
+			})
+			//定义画布宽高和生成点的个数
+			var WIDTH = window.innerWidth,
+				HEIGHT = window.innerHeight,
+				POINT = 35;
 
-		//线条：开始xy坐标，结束xy坐标，线条透明度
-		function Line (x, y, _x, _y, o) {
-			this.beginX = x,
-			this.beginY = y,
-			this.closeX = _x,
-			this.closeY = _y,
-			this.o = o;
-		}
-		//点：圆心xy坐标，半径，每帧移动xy的距离
-		function Circle (x, y, r, moveX, moveY) {
-			this.x = x,
-			this.y = y,
-			this.r = r,
-			this.moveX = moveX,
-			this.moveY = moveY;
-		}
-		//生成max和min之间的随机数
-		function num (max, _min) {
-			var min = arguments[1] || 0;
-			return Math.floor(Math.random()*(max-min+1)+min);
-		}
-		// 绘制原点
-		function drawCricle (cxt, x, y, r, moveX, moveY) {
-			var circle = new Circle(x, y, r, moveX, moveY)
-			cxt.beginPath()
-			cxt.arc(circle.x, circle.y, circle.r, 0, 2*Math.PI)
-			cxt.closePath()
-			cxt.fill();
-			return circle;
-		}
-		//绘制线条
-		function drawLine (cxt, x, y, _x, _y, o) {
-			var line = new Line(x, y, _x, _y, o)
-			cxt.beginPath()
-			cxt.strokeStyle = 'rgba(0,0,0,'+ o +')'
-			cxt.moveTo(line.beginX, line.beginY)
-			cxt.lineTo(line.closeX, line.closeY)
-			cxt.closePath()
-			cxt.stroke();
+			var canvas = document.getElementById('canvas');
+			canvas.width = WIDTH,
+				canvas.height = HEIGHT;
+			var context = canvas.getContext('2d');
+			context.strokeStyle = 'rgba(0,0,0,0.02)',
+				context.strokeWidth = 1,
+				context.fillStyle = 'rgba(0,0,0,0.05)';
+			var circleArr = [];
 
-		}
-		//初始化生成原点
-		function init () {
-			circleArr = [];
-			for (var i = 0; i < POINT; i++) {
-				circleArr.push(drawCricle(context, num(WIDTH), num(HEIGHT), num(15, 2), num(10, -10)/40, num(10, -10)/40));
+			//线条：开始xy坐标，结束xy坐标，线条透明度
+			function Line(x, y, _x, _y, o) {
+				this.beginX = x,
+					this.beginY = y,
+					this.closeX = _x,
+					this.closeY = _y,
+					this.o = o;
 			}
-			draw();
-		}
-
-		//每帧绘制
-		function draw () {
-			context.clearRect(0,0,canvas.width, canvas.height);
-			for (var i = 0; i < POINT; i++) {
-				drawCricle(context, circleArr[i].x, circleArr[i].y, circleArr[i].r);
+			//点：圆心xy坐标，半径，每帧移动xy的距离
+			function Circle(x, y, r, moveX, moveY) {
+				this.x = x,
+					this.y = y,
+					this.r = r,
+					this.moveX = moveX,
+					this.moveY = moveY;
 			}
-			for (var i = 0; i < POINT; i++) {
-				for (var j = 0; j < POINT; j++) {
-					if (i + j < POINT) {
-						var A = Math.abs(circleArr[i+j].x - circleArr[i].x),
-							B = Math.abs(circleArr[i+j].y - circleArr[i].y);
-						var lineLength = Math.sqrt(A*A + B*B);
-						var C = 1/lineLength*7-0.009;
-						var lineOpacity = C > 0.03 ? 0.03 : C;
-						if (lineOpacity > 0) {
-							drawLine(context, circleArr[i].x, circleArr[i].y, circleArr[i+j].x, circleArr[i+j].y, lineOpacity);
+			//生成max和min之间的随机数
+			function num(max, _min) {
+				var min = arguments[1] || 0;
+				return Math.floor(Math.random() * (max - min + 1) + min);
+			}
+			// 绘制原点
+			function drawCricle(cxt, x, y, r, moveX, moveY) {
+				var circle = new Circle(x, y, r, moveX, moveY)
+				cxt.beginPath()
+				cxt.arc(circle.x, circle.y, circle.r, 0, 2 * Math.PI)
+				cxt.closePath()
+				cxt.fill();
+				return circle;
+			}
+			//绘制线条
+			function drawLine(cxt, x, y, _x, _y, o) {
+				var line = new Line(x, y, _x, _y, o)
+				cxt.beginPath()
+				cxt.strokeStyle = 'rgba(0,0,0,' + o + ')'
+				cxt.moveTo(line.beginX, line.beginY)
+				cxt.lineTo(line.closeX, line.closeY)
+				cxt.closePath()
+				cxt.stroke();
+
+			}
+			//初始化生成原点
+			function init() {
+				circleArr = [];
+				for(var i = 0; i < POINT; i++) {
+					circleArr.push(drawCricle(context, num(WIDTH), num(HEIGHT), num(15, 2), num(10, -10) / 40, num(10, -10) / 40));
+				}
+				draw();
+			}
+
+			//每帧绘制
+			function draw() {
+				context.clearRect(0, 0, canvas.width, canvas.height);
+				for(var i = 0; i < POINT; i++) {
+					drawCricle(context, circleArr[i].x, circleArr[i].y, circleArr[i].r);
+				}
+				for(var i = 0; i < POINT; i++) {
+					for(var j = 0; j < POINT; j++) {
+						if(i + j < POINT) {
+							var A = Math.abs(circleArr[i + j].x - circleArr[i].x),
+								B = Math.abs(circleArr[i + j].y - circleArr[i].y);
+							var lineLength = Math.sqrt(A * A + B * B);
+							var C = 1 / lineLength * 7 - 0.009;
+							var lineOpacity = C > 0.03 ? 0.03 : C;
+							if(lineOpacity > 0) {
+								drawLine(context, circleArr[i].x, circleArr[i].y, circleArr[i + j].x, circleArr[i + j].y, lineOpacity);
+							}
 						}
 					}
 				}
 			}
-		}
 
-		//调用执行
-		window.onload = function () {
-			init();
-			setInterval(function () {
-				for (var i = 0; i < POINT; i++) {
-					var cir = circleArr[i];
-					cir.x += cir.moveX;
-					cir.y += cir.moveY;
-					if (cir.x > WIDTH) cir.x = 0;
-					else if (cir.x < 0) cir.x = WIDTH;
-					if (cir.y > HEIGHT) cir.y = 0;
-					else if (cir.y < 0) cir.y = HEIGHT;
-					
-				}
-				draw();
-			}, 16);
-		}
-	</script>
+			//调用执行
+			window.onload = function() {
+				init();
+				setInterval(function() {
+					for(var i = 0; i < POINT; i++) {
+						var cir = circleArr[i];
+						cir.x += cir.moveX;
+						cir.y += cir.moveY;
+						if(cir.x > WIDTH) cir.x = 0;
+						else if(cir.x < 0) cir.x = WIDTH;
+						if(cir.y > HEIGHT) cir.y = 0;
+						else if(cir.y < 0) cir.y = HEIGHT;
+
+					}
+					draw();
+				}, 16);
+			}
+		</script>
 	</body>
-
 </html>
