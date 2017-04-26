@@ -46,7 +46,7 @@ body{background: url("../img/bg.jpg") repeat;}
 .loginImg img{width: 70px;height: 70px;border-radius: 50%;cursor: pointer;}
 .loginList{width: 150px;display: none;font-size: 14px;}
 .loginList li{line-height: 25px;background: url(../img/status-bg.png) no-repeat;margin: 6px 0;text-align: center;color: #FAFAFA;border-radius: 10px;position: relative;}
-.loginList li a{color: #FAFAFA;}
+.loginList li a{color: #FAFAFA;display: block;width: 100%;}
 .loginList li:hover{background: #CC9966;cursor: pointer;}
 .loginName{color: #fffd73 !important;margin-top: 8px !important;}
 .loginName:hover{background: url(../img/status-bg.png) no-repeat !important;cursor: pointer;}
@@ -229,3 +229,20 @@ footer{color: #fff;text-align: center;font-size: 18px;height: 20px;line-height: 
  .location span:last-child{font-style: italic;}
 .Article-catagory{width: 100%;display: flex;justify-content: space-around;margin: 15px 0;}
 .Article-catagory li{margin: 0;margin-right: 20px;width: 80px;height: 80px;border-radius: 50%;line-height: 80px;}
+/*----------
+   login
+  ---------*/
+canvas {position: absolute;display: block;top: 0;width: 100%;z-index: -1;}
+.index-main-body{width: 300px;margin: auto;padding: 200px 0 102px;}
+.sign-button{width: 100%;line-height: 41px;background: #0f88eb;color: #fff;padding: 0;}
+.sign-button:hover,.send{background:#55abed;cursor: pointer;}
+.index-tab-navs{margin-bottom: 10px;font-size: 18px;text-align: center;}
+.index-header .subtitle {margin: 30px 0 20px;font-weight: 400;font-size: 18px;line-height: 1;}
+.index-tab-navs .navs-slider {position: relative;display: inline-block;}
+.index-tab-navs a {float: left;width: 4em;line-height: 35px;opacity: .7;-ms-filter: "alpha(Opacity=70)";-webkit-transition: opacity .15s,color .15s;transition: opacity .15s,color .15s;color: #333;}
+.index-tab-navs a.active {opacity: 1;-ms-filter: "alpha(Opacity=100)";color: #0f88eb;}
+.index-tab-navs .navs-slider .navs-slider-bar {position: absolute;left: 4.5rem;bottom: 0;margin: 0 .8em;width: 2.4em;height: 2px;background: #0f88eb;-webkit-transition: left .15s ease-in;transition: left .15s ease-in;font-size: 18px;text-align: center;}
+.forget-password{line-height: 30px;float: right;font-size: 15px;}
+.login-footer{color: #666;position: fixed;bottom: 20px;width: 100%;}
+.code{position: relative;}
+.code .send{position: absolute;right: 0px;height: 40px;top: 0;background: #0f88eb;color: #fff;font-size: 12px;line-height: 40px;border-radius: 3px;width: 90px;text-align: center;}
