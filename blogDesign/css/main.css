@@ -50,7 +50,7 @@ body{background: -webkit-linear-gradient(right bottom,#EBE6E6, #DDE9DE);
 .loginList{width: 150px;display: none;font-size: 14px;}
 .loginList li{line-height: 25px;background: url(../img/status-bg.png) no-repeat;margin: 6px 0;text-align: center;color: #FAFAFA;border-radius: 10px;position: relative;}
 .loginList li a{color: #FAFAFA;display: block;width: 100%;}
-.loginList li:hover{background: #CC9966;cursor: pointer;}
+.loginList li:hover{background: #0f88eb;cursor: pointer;}
 .loginName{color: #fffd73 !important;margin-top: 8px !important;}
 .loginName:hover{background: url(../img/status-bg.png) no-repeat !important;cursor: pointer;}
 .personInfo:before,.changePwd:before,.exit:before{background:url(../img/loginlistIcon.png) no-repeat;content: '';display: block;position: absolute;left: 15px;top: 4px;width: 22px;height: 20px;}
