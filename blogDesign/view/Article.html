@@ -11,11 +11,11 @@
 		<script src="../public/js/page.js"></script>
 		<script src="../js/main.js"></script>
 		<style type="text/css">
-			.pagination {color: #F5F5F5;text-align: center;margin: 8px;}
-			.pagination span {color: #F5F5F5;margin:0 5px ;padding: 3px 6px;border: solid thin #333;}
-			.pagination span.on {background-color: #0099FF;color: #F5F5F5;border: solid thin #0099FF;}
+			.pagination {color: #ac8b72;text-align: center;margin: 8px;}
+			.pagination span {color: #ac8b72;margin:0 5px ;padding: 3px 6px;border: solid thin #ac8b72;}
+			.pagination span.on {background-color: #0099FF;color: #fff;border: solid thin #0099FF;}
 			.pagination a{text-decoration: none;}
-			.pagination a span {border: 1px solid #F5F5F5;color: #F5F5F5;}
+			.pagination a span {border: 1px solid #F5F5F5;color: #ac8b72;}
 			#pager{margin: 20px;padding: 4px;}
 		</style>
 	</head>
@@ -156,18 +156,10 @@
 		<footer>
 			<p>©2017 Design by Gao</p>
 		</footer>
-		<script type="text/javascript">
-			function tt(dd) {
-				//alert(dd);
-			}
-			var GG = {
-				"kk": function(mm) {
-					// alert(mm);
-				}
-			}
-
-			$("#page").initPage(71, 1, GG.kk);
-		</script>
+		<canvas id="canvas" style="height: 1000px;"></canvas>
+		<!--<script>
+			$('#canvas').height('800px');
+		</script>-->
 		<script>
 			//实现分页
 			var currentPage = 1; // 当前页码, 从1开始
@@ -181,7 +173,7 @@
 				//循环生成数组
 				var arr = [];
 				for(var o = 1; o <=totalNumber; o++) {
-					arr.push('<article class="clearfix">'+o+'<div class ="article-bg"><img src = "../img/1-1504022119110-L.jpg" alt= "文章图片"></div><div class = "article-content" ><header ><h3 > 文章标题 </h3></header><p class = "p-bottom">己在互联网上的个人品牌，其实这就是一种“自媒体”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？” 。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先只有先了解这套流程，我们才能做出自己满意的个人博客。 ”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先</p> <p class = "article-footer clearfix"> <span> 分类: <a href = "#"> 学无止境 </a></span> <span> 发布时间： <time> 2017 - 03 - 24 13: 15: 11 </time></span></p></div></article>');
+					arr.push('<article class="clearfix"><a href="articleDetail.html">'+o+'<div class ="article-bg"><img src = "../img/1-1504022119110-L.jpg" alt= "文章图片"></div><div class = "article-content" ><header ><h3 > 文章标题 </h3></header><p class = "p-bottom">己在互联网上的个人品牌，其实这就是一种“自媒体”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？” 。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先只有先了解这套流程，我们才能做出自己满意的个人博客。 ”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先</p> <p class = "article-footer clearfix"> <span> 分类: <a href = "#"> 学无止境 </a></span> <span> 发布时间： <time> 2017 - 03 - 24 13: 15: 11 </time></span></p></div></a></article>');
 				}
 				//每一页第一个li
 				var rangeStartitem = (currentPage - 1) * pageSize;

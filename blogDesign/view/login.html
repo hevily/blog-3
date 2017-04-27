@@ -12,8 +12,8 @@
 		<script src="../js/main.js"></script>
 	</head>
 
-	<body style="background: none;">
-		<div class="index-main-body">
+	<body>
+		<main class="index-main-body" style="min-width: auto;">
 			<div class="index-header">
 				<h1 class="logo">BLOG</h1>
 				<h2 class="subtitle">发现更大的世界</h2>
@@ -21,53 +21,67 @@
 			<div>
 				<div class="index-tab-navs">
 					<div class="navs-slider">
-						<a href="javascript:void()" id="signup" class="">注册</a>
-						<a href="javascript:void()"  id="signin" class="active">登录</a>
+						<a href="javascript:void(0)" id="signup" class="">注册</a>
+						<a href="javascript:void(0)" id="signin" class="active">登录</a>
 						<span class="navs-slider-bar"></span>
 					</div>
 				</div>
 				<!--//login-->
-				<div class="view-signin">
-						<input type="text"  aria-label="手机号或邮箱" placeholder="手机号或邮箱" required="">
-						<input type="password"  aria-label="密码" placeholder="密码" required="">
+				<div class="login-wrap">
+					<div class="view-signin">
+						<input type="text" aria-label="手机号或邮箱" placeholder="手机号或邮箱" required="">
+						<input type="password" aria-label="密码" placeholder="密码" required="">
 						<a href="index.html"><button class="sign-button" type="submit">登录</button></a>
 						<div class="clearfix">
-							<a class="forget-password" href="#">忘记密码？</a>
+							<a class="login-Toggle" href="javascript:void(0)" id="pswdLogin">手机验证码登录</a>
 						</div>
-				</div>
-				<!--//register-->
-				<div class="view-signup"  style="display: none;">
-						<input type="text"  aria-label="姓名" placeholder="姓名">
-						<input type="text" class="account"  aria-label="手机号" placeholder="手机号">
-						<input type="password"  aria-label="密码" placeholder="密码（不少于 6 位）">
+					</div>
+				    <!--codeLogin-->
+					<div class="view-forgetPwd" style="display: none;">
+						<input type="text" class="account" aria-label="手机号" placeholder="手机号">
 						<div class="code">
-							<input type="text"  aria-label="验证码" placeholder="验证码">
+							<input type="text" aria-label="验证码" placeholder="验证码">
 							<input class="send" value="发送验证码">
 						</div>
-						<button class="sign-button" type="submit">进入博客</button>
+						<a href="index.html"><button class="sign-button" type="submit">登录</button></a>
+						<div class="clearfix">
+							<a class="login-Toggle" href="javascript:void(0)" id="mobileLogin">密码登录</a>
+						</div>
+					</div>
+				</div>
+				<!--//register-->
+				<div class="view-signup" style="display: none;">
+					<input type="text" aria-label="姓名" placeholder="姓名">
+					<input type="text" class="account" aria-label="手机号" placeholder="手机号">
+					<input type="password" aria-label="密码" placeholder="密码（不少于 6 位）">
+					<div class="code">
+						<input type="text" aria-label="验证码" placeholder="验证码">
+						<input class="send" value="发送验证码">
+					</div>
+					<button class="sign-button" type="submit">进入博客</button>
 				</div>
 			</div>
-		</div>
+		</main>
 		<footer class="login-footer">
 			<p>©2017 Design by Gao</p>
 		</footer>
-		<canvas id="canvas"></canvas>
+		<canvas id="canvas" style="height: 1000px;"></canvas>
 		<script>
-			var bodyHeight=$(window).height();
+			var bodyHeight = $(window).height();
 			$('canvas').height(bodyHeight);
-			$("#signin").click(function  () {
+			$("#signin").click(function() {
 				$(".navs-slider a").removeClass('active');
 				$(this).addClass('active');
-				$('.navs-slider-bar').css('left','4.5rem');
-				$('.view-signup').css('display','none');
-				$('.view-signin').css('display','block');
+				$('.navs-slider-bar').css('left', '4.5rem');
+				$('.view-signup').css('display', 'none');
+				$('.login-wrap').css('display', 'block');
 			})
-			$("#signup").click(function  () {
+			$("#signup").click(function() {
 				$(".navs-slider a").removeClass('active');
 				$(this).addClass('active');
-				$('.navs-slider-bar').css('left','0');
-				$('.view-signin').css('display','none');
-				$('.view-signup').css('display','block');
+				$('.navs-slider-bar').css('left', '0');
+				$('.login-wrap').css('display', 'none');
+				$('.view-signup').css('display', 'block');
 			})
 			//定义画布宽高和生成点的个数
 			var WIDTH = window.innerWidth,
@@ -174,4 +188,5 @@
 			}
 		</script>
 	</body>
+
 </html>
