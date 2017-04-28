@@ -13,7 +13,7 @@ img{width: 100%;font-size: 0;display: block}
 body{background: -webkit-linear-gradient(right bottom,#EBE6E6, #DDE9DE); 
   background: -o-linear-gradient(left top,#EBE6E6, #DDE9DE); 
   background: -moz-linear-gradient(left top,#EBE6E6, #DDE9DE);
-  background: linear-gradient(left top,#EBE6E6, #DDE9DE);}
+  background: linear-gradient(left top,#EBE6E6, #DDE9DE);margin-top: 20px;}
 /*----------
     header
   ---------*/
@@ -83,7 +83,10 @@ article:hover{border-bottom:2px solid #fff;}
 .common{margin-bottom: 30px;}
 .about img{height: 250px;width: 180px;border: 1px solid #fffd73;}
 .about p{color:#ac8b72;font-size: 14px;line-height: 30px;font-style: italic}
-.Article{position: relative}
+.Article{position: relative;}
+.add-article{font-size: 18px;margin: 10px 0;color: #CC9966;}
+.add-article:before{font-size: 25px;}
+.add-article:hover{color: #632A1D;transition: all .3s;}
 .Article .Article-list li a{display: block;color:#ac8b72;font-size: 15px;padding-left: 25px;border-bottom: 1px solid #eee;}
 .Article .number{position: absolute;top: 50px;color:#ac8b72;}
 .Article li{margin-bottom: 5px;}
@@ -259,3 +262,16 @@ canvas {position: absolute;top: 0;width: 100%;z-index: -1;}
 .articleDetail-top span{margin-right: 25px;height: 30px;line-height: 30px;}
 .articleDetail-top i{font-style: normal;}
 .articleDetail-content{color: #ac8b72;line-height: 30px;margin-top: 20px;text-indent: 2rem;}
+/*----------
+   articleDetail
+  ---------*/
+.comment-wrap{width: 1100px;margin: auto;}
+.make-comment{margin: 25px 0;}
+.make-comment-left{float: left;width:60px;height: 60px;border-radius: 50%}
+.make-comment-right{margin-left: 80px;}
+.comment-btns{float: right;}
+.comment-btn,.comment-cancle{border-radius: 4px;height: 35px;width: 120px;padding: 0 16px;}
+.comment-btn{color: #0080ff;border: 1px solid #0f88eb;}
+.make-comment-right textarea{border-radius: 8px;}
+.commentItem-left{float: left;width:60px;height: 60px;border-radius: 50%}
+
