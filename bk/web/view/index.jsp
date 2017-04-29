@@ -1,22 +1,24 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
+%>
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8">
 		<title>主页</title>
-		<link rel="stylesheet" type="text/css" href="../public/css/mui.min.css" />
-		<link rel="stylesheet" type="text/css" href="../public/css/page.css" />
-		<link rel="stylesheet" href="../css/main.css">
-		<script src="../public/js/jquery-3.2.0.min.js"></script>
-		<script src="../public/js/page.js"></script>
-		<script src="../js/main.js"></script>
+        <jsp:include page="inc.jsp"></jsp:include>
+		<style>
+			.scrollTop{position:fixed;right:100px;bottom:100px;width:100px;height:100px;cursor:pointer;display:none;}
+		</style>
 	</head>
 
 	<body>
 		<header class="top-header">
 			<div class="header-top-wrap">
 				<div class="header-top">
-					<img src="../img/banner_top.jpg" alt="banner">
+					<img src="<%=basePath%>/assets/img/banner_top.jpg" alt="banner">
 					<div class="banner-words">
 						<p class="a-fadeinL page1_1">我们不停的翻弄着回忆</p>
 						<p class="a-fadeinL page1_2">却再也找不回那时的自己</p>
@@ -24,19 +26,19 @@
 					</div>
 					<div class="loginIn">
 						<div class="loginImg">
-							<img src="../img/mr.jpg" alt="photo" class="login-Photo"/>
+							<img src="<%=basePath%>/assets/img/mr.jpg" alt="photo" class="login-Photo"/>
 						</div>
 						<div class="loginList">
 							<ul>
 								<li class="loginName">寻找火星人</li>
 								<li class="personInfo">
-									<a href="myInfo.html">个人中心</a>
+									<a href="<%=basePath%>/view/myInfo.jsp">个人中心</a>
 								</li>
 								<li class="changePwd">
-									<a href="myInfo.html">修改密码</a>
+									<a href="<%=basePath%>/view/myInfo.jsp">修改密码</a>
 								</li>
 								<li class="exit">
-									<a href="login.jsp">退出</a>
+									<a href="<%=basePath%>">退出</a>
 								</li>
 							</ul>
 						</div>
@@ -46,22 +48,22 @@
 			<div class="nav-wrap">
 				<ul class="nav" id="nav">
 					<li class="navOn">
-						<a href="index.html">首页</a>
+						<a href="<%=basePath%>/view/index.jsp">首页</a>
 					</li>
 					<li>
-						<a href="Article.html">博文</a>
+						<a href="<%=basePath%>/view/Article.jsp">博文</a>
 					</li>
 					<li>
-						<a href="Album.jsp">相册</a>
+						<a href="<%=basePath%>/view/Album.jsp">相册</a>
 					</li>
 					<li>
-						<a href="Diary.html">日记</a>
+						<a href="<%=basePath%>/view/Diary.jsp">日记</a>
 					</li>
 					<li>
-						<a href="Guestbook.html">留言板</a>
+						<a href="<%=basePath%>/view/Guestbook.jsp">留言板</a>
 					</li>
 					<li>
-						<a href="about.jsp">关于我</a>
+						<a href="<%=basePath%>/view/about.jsp">关于我</a>
 					</li>
 				</ul>
 			</div>
@@ -73,37 +75,37 @@
 						<div class="Album-left" id="Album-left">
 							<ul class="album-list">
 								<li style="display: block">
-									<a href=""><img src="../img/s-banner1.jpg" alt="图1"></a>
+									<a href=""><img src="<%=basePath%>/assets/img/s-banner1.jpg" alt="图1"></a>
 								</li>
 								<li>
-									<a href=""><img src="../img/s-banner2.jpg" alt="图2"></a>
+									<a href=""><img src="<%=basePath%>/assets/img/s-banner2.jpg" alt="图2"></a>
 								</li>
 								<li>
-									<a href=""><img src="../img/s-banner3.jpg" alt="图3"></a>
+									<a href=""><img src="<%=basePath%>/assets/img/s-banner3.jpg" alt="图3"></a>
 								</li>
 								<li>
-									<a href=""><img src="../img/s-banner4.jpg" alt="图4"></a>
+									<a href=""><img src="<%=basePath%>/assets/img/s-banner4.jpg" alt="图4"></a>
 								</li>
 								<li>
-									<a href=""><img src="../img/s-banner5.jpg" alt="图5"></a>
+									<a href=""><img src="<%=basePath%>/assets/img/s-banner5.jpg" alt="图5"></a>
 								</li>
 							</ul>
 						</div>
 						<div class="Album-right" id="Album-right">
 							<ul class="list-wrap">
 								<i class="icon-top"></i>
-								<li><img src="../img/s-b1.jpg" alt="图1"></li>
-								<li><img src="../img/s-b2.jpg" alt="图2"></li>
-								<li><img src="../img/s-b3.jpg" alt="图3"></li>
-								<li><img src="../img/s-b4.jpg" alt="图4"></li>
-								<li><img src="../img/s-b5.jpg" alt="图5"></li>
-								<div class="hover-bg" id="hover-bg"><img src="../img/hover_bg.png" alt="图片边框"></div>
+								<li><img src="<%=basePath%>/assets/img/s-b1.jpg" alt="图1"></li>
+								<li><img src="<%=basePath%>/assets/img/s-b2.jpg" alt="图2"></li>
+								<li><img src="<%=basePath%>/assets/img/s-b3.jpg" alt="图3"></li>
+								<li><img src="<%=basePath%>/assets/img/s-b4.jpg" alt="图4"></li>
+								<li><img src="<%=basePath%>/assets/img/s-b5.jpg" alt="图5"></li>
+								<div class="hover-bg" id="hover-bg"><img src="<%=basePath%>/assets/img/hover_bg.png" alt="图片边框"></div>
 								<i class="icon-bottom"></i>
 							</ul>
 						</div>
 					</div>
 					<div class="Diary">
-						<img src="../img/one.jpg" alt="黑板">
+						<img src="<%=basePath%>/assets/img/one.jpg" alt="黑板">
 						<p>一些很期待的生活，总是在那些自以为是的梦想里，忘却、消磨。</p>
 					</div>
 				</div>
@@ -113,9 +115,9 @@
 					<h1 class="h1">文章推荐</h1>
 					<div class="Article-wrap">
 						<article class=" clearfix">
-							<a href="articleDetail.html">
+							<a href="<%=basePath%>/view/articleDetail.jsp">
 								<div class="article-bg">
-									<img src="../img/1-1504022119110-L.jpg" alt="文章图片">
+									<img src="<%=basePath%>/assets/img/1-1504022119110-L.jpg" alt="文章图片">
 								</div>
 								<div class="article-content">
 									<header>
@@ -128,9 +130,9 @@
 							</a>
 						</article>
 						<article class=" clearfix">
-							<a href="articleDetail.html">
+							<a href="<%=basePath%>/view/articleDetail.jsp">
 								<div class="article-bg">
-									<img src="../img/1-1504022119110-L.jpg" alt="文章图片">
+									<img src="<%=basePath%>/assets/img/1-1504022119110-L.jpg" alt="文章图片">
 								</div>
 								<div class="article-content">
 									<header>
@@ -143,9 +145,9 @@
 							</a>
 						</article>
 						<article class=" clearfix">
-							<a href="articleDetail.html">
+							<a href="<%=basePath%>/view/articleDetail.jsp">
 								<div class="article-bg">
-									<img src="../img/1-1504022119110-L.jpg" alt="文章图片">
+									<img src="<%=basePath%>/assets/img/1-1504022119110-L.jpg" alt="文章图片">
 								</div>
 								<div class="article-content">
 									<header>
@@ -158,9 +160,9 @@
 							</a>
 						</article>
 						<article class=" clearfix">
-							<a href="articleDetail.html">
+							<a href="<%=basePath%>/view/articleDetail.jsp">
 								<div class="article-bg">
-									<img src="../img/1-1504022119110-L.jpg" alt="文章图片">
+									<img src="<%=basePath%>/assets/img/1-1504022119110-L.jpg" alt="文章图片">
 								</div>
 								<div class="article-content">
 									<header>
@@ -173,9 +175,9 @@
 							</a>
 						</article>
 						<article class=" clearfix">
-							<a href="articleDetail.html">
+							<a href="<%=basePath%>/view/articleDetail.jsp">
 								<div class="article-bg">
-									<img src="../img/1-1504022119110-L.jpg" alt="文章图片">
+									<img src="<%=basePath%>/assets/img/1-1504022119110-L.jpg" alt="文章图片">
 								</div>
 								<div class="article-content">
 									<header>
@@ -188,9 +190,9 @@
 							</a>
 						</article>
 						<article class=" clearfix">
-							<a href="articleDetail.html">
+							<a href="<%=basePath%>/view/articleDetail.jsp">
 								<div class="article-bg">
-									<img src="../img/1-1504022119110-L.jpg" alt="文章图片">
+									<img src="<%=basePath%>/assets/img/1-1504022119110-L.jpg" alt="文章图片">
 								</div>
 								<div class="article-content">
 									<header>
@@ -216,22 +218,22 @@
 						<h1 class="h1">文章分类</h1>
 						<ul class="clearfix">
 							<li style="background: #666666;">
-								<a href="">学无止境</a>
+								<a href="<%=basePath%>/view/Article.jsp">学无止境</a>
 							</li>
 							<li style="background: #00CCCC;">
-								<a href="">奇思妙想</a>
+								<a href="<%=basePath%>/view/Article.jsp">奇思妙想</a>
 							</li>
 							<li style="background: #CC9966;">
-								<a href="">人文科技</a>
+								<a href="<%=basePath%>/view/Article.jsp">人文科技</a>
 							</li>
 							<li style="background: #6633CC;">
-								<a href="">人物</a>
+								<a href="<%=basePath%>/view/Article.jsp">人物</a>
 							</li>
 						</ul>
 					</div>
 					<div class="common about">
 						<h1 class="h1">关于博主</h1>
-						<img src="../img/jie.jpg" alt="博主照片">
+						<img src="<%=basePath%>/assets/img/jie.jpg" alt="博主照片">
 						<p>博主：张少杰</p>
 						<p>职业：小学生</p>
 						<p>个人简介：我是小学生，我爱在上课的时候睡觉。</p>
@@ -240,22 +242,22 @@
 						<h1 class="h1">文章排行</h1>
 						<ul class="Article-list" id="Article-list">
 							<li>
-								<a href="#">文章标题</a>
+								<a href="<%=basePath%>/view/articleDetail.jsp">文章标题</a>
 							</li>
 							<li>
-								<a href="#">文章标题</a>
+								<a href="<%=basePath%>/view/articleDetail.jsp">文章标题</a>
 							</li>
 							<li>
-								<a href="#">文章标题</a>
+								<a href="<%=basePath%>/view/articleDetail.jsp">文章标题</a>
 							</li>
 							<li>
-								<a href="#">文章标题</a>
+								<a href="<%=basePath%>/view/articleDetail.jsp">文章标题</a>
 							</li>
 							<li>
-								<a href="#">文章标题</a>
+								<a href="<%=basePath%>/view/articleDetail.jsp">文章标题</a>
 							</li>
 							<li>
-								<a href="#">文章标题</a>
+								<a href="<%=basePath%>/view/articleDetail.jsp">文章标题</a>
 							</li>
 						</ul>
 						<ol class="number">
@@ -270,18 +272,18 @@
 					<div class="common visitor">
 						<h1 class="h1">最近访客</h1>
 						<ul class="clearfix">
-							<li class="clearfix"><img src="../img/photo.jpg" /></li>
-							<li class="clearfix"><img src="../img/photo.jpg" /></li>
-							<li class="clearfix"><img src="../img/photo.jpg" /></li>
-							<li class="clearfix"><img src="../img/photo.jpg" /></li>
-							<li class="clearfix"><img src="../img/photo.jpg" /></li>
-							<li class="clearfix"><img src="../img/photo.jpg" /></li>
-							<li class="clearfix"><img src="../img/photo.jpg" /></li>
-							<li class="clearfix"><img src="../img/photo.jpg" /></li>
-							<li class="clearfix"><img src="../img/photo.jpg" /></li>
-							<li class="clearfix"><img src="../img/photo.jpg" /></li>
-							<li class="clearfix"><img src="../img/photo.jpg" /></li>
-							<li class="clearfix"><img src="../img/photo.jpg" /></li>
+							<li class="clearfix"><img src="<%=basePath%>/assets/img/photo.jpg" /></li>
+							<li class="clearfix"><img src="<%=basePath%>/assets/img/photo.jpg" /></li>
+							<li class="clearfix"><img src="<%=basePath%>/assets/img/photo.jpg" /></li>
+							<li class="clearfix"><img src="<%=basePath%>/assets/img/photo.jpg" /></li>
+							<li class="clearfix"><img src="<%=basePath%>/assets/img/photo.jpg" /></li>
+							<li class="clearfix"><img src="<%=basePath%>/assets/img/photo.jpg" /></li>
+							<li class="clearfix"><img src="<%=basePath%>/assets/img/photo.jpg" /></li>
+							<li class="clearfix"><img src="<%=basePath%>/assets/img/photo.jpg" /></li>
+							<li class="clearfix"><img src="<%=basePath%>/assets/img/photo.jpg" /></li>
+							<li class="clearfix"><img src="<%=basePath%>/assets/img/photo.jpg" /></li>
+							<li class="clearfix"><img src="<%=basePath%>/assets/img/photo.jpg" /></li>
+							<li class="clearfix"><img src="<%=basePath%>/assets/img/photo.jpg" /></li>
 						</ul>
 					</div>
 
@@ -291,13 +293,27 @@
 		<footer>
 			<p>©2017 Design by Gao</p>
 		</footer>
+		<div class="scrollTop" style="z-index: 9999; display: block;"><img src="<%=basePath%>/assets/img/indexIcon-4.png"></div>
 		<canvas id="canvas" style="height: 1000px;"></canvas>
 		<!--<script>
 			var bodyHeight = $('body').height();
 			$('canvas').height(bodyHeight);
 		</script>-->
-		<script src="../js/canvas.js"></script>
+		<script src="<%=basePath%>/assets/js/canvas.js"></script>
 		<script>
+            //返回头部按钮事件
+            $('.scrollTop').on('click', function() {
+                $("html,body").animate({scrollTop:0}, 500);
+            });
+
+            $(window).on('scroll',function () {
+                console.log($(this).scrollTop)
+                if($(this).scrollTop > 200){
+                    $('.scrollTop').show();
+                }else{
+                    $('.scrollTop').hide();
+                }
+            })
 			//相册幻灯片
 			//设置定时器
 			timer = setInterval(function() {

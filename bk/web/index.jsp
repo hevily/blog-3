@@ -1,4 +1,4 @@
-<%--
+﻿<%--
   Created by IntelliJ IDEA.
   User: gao
   Date: 2017/4/25
@@ -30,7 +30,7 @@
                 "password":$("#password").val()
             },
             success:function(msgString){
-                alert("into fun" + msgString.msg)
+                alert("into fun" + msgString.msg + "测试")
                 if(msgString.code == '200'){
                     console.log(msgString.data.userName+','+msgString.data.password);
                 }
