@@ -1,11 +1,15 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
+%>
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8">
-		<title>关于我</title>
-		<link rel="stylesheet" type="text/css" href="../public/css/mui.min.css" />
-		<link rel="stylesheet" type="text/css" href="../public/css/page.css" />
+		<title>相册</title>
+		<link rel="stylesheet" type="text/css" href="../public/css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../public/css/page.css"/>
 		<link rel="stylesheet" href="../css/main.css">
 		<script src="../public/js/jquery-3.2.0.min.js"></script>
 		<script src="../public/js/page.js"></script>
@@ -24,22 +28,16 @@
 					</div>
 					<div class="loginIn">
 						<div class="loginImg">
-							<img src="../img/mr.jpg" alt="photo" />
-						</div>
-						<div class="loginList">
-							<ul>
-								<li class="loginName">寻找火星人</li>
-								<li class="personInfo">
-									<a href="myInfo.html">个人中心</a>
-								</li>
-								<li class="changePwd">
-									<a href="myInfo.html">修改密码</a>
-								</li>
-								<li class="exit">
-									<a href="login.html">退出</a>
-								</li>
-							</ul>
-						</div>
+						<img src="../img/mr.jpg" alt="photo"/>
+					</div>
+					<div class="loginList">
+						<ul>
+							<li class="loginName">寻找火星人</li>
+							<li class="personInfo"><a href="myInfo.html">个人中心</a></li>
+							<li class="changePwd"><a href="myInfo.html">修改密码</a></li>
+							<li class="exit"><a href="login.jsp">退出</a></li>
+						</ul>
+					</div>
 					</div>
 				</div>
 			</div>
@@ -51,8 +49,8 @@
 					<li>
 						<a href="Article.html">博文</a>
 					</li>
-					<li>
-						<a href="Album.html">相册</a>
+					<li class="navOn">
+						<a href="Album.jsp">相册</a>
 					</li>
 					<li>
 						<a href="Diary.html">日记</a>
@@ -60,8 +58,8 @@
 					<li>
 						<a href="Guestbook.html">留言板</a>
 					</li>
-					<li class="navOn">
-						<a href="about.html">关于我</a>
+					<li>
+						<a href="about.jsp">关于我</a>
 					</li>
 				</ul>
 			</div>
@@ -69,9 +67,8 @@
 		<main class="clearfix">
 			<div class="main-wrap clearfix">
 				<div class="location">
-					<span class="mui-icon mui-icon-location">您当前的位置：</span>
-					<a href="index.html">首页</a><span>></span><span>关于我</span>
-				</div>
+				<span class="mui-icon mui-icon-location">您当前的位置：</span><a href="index.html">首页</a><span>></span><span>相册</span>
+			</div>
 			</div>
 		</main>
 		<footer>

@@ -1,15 +1,19 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
+%>
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8">
 		<title>登录</title>
-		<link rel="stylesheet" type="text/css" href="../public/css/mui.min.css" />
-		<link rel="stylesheet" type="text/css" href="../public/css/page.css" />
-		<link rel="stylesheet" href="../css/main.css">
-		<script src="../public/js/jquery-3.2.0.min.js"></script>
-		<script src="../public/js/page.js"></script>
-		<script src="../js/main.js"></script>
+		<link rel="stylesheet" type="text/css" href="<%=basePath%>/public/css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="<%=basePath%>/public/css/page.css" />
+		<link rel="stylesheet" href="<%=basePath%>/assets/css/main.css">
+		<script src="<%=basePath%>/public/js/jquery-3.2.0.min.js"></script>
+		<script src="<%=basePath%>/public/js/page.js"></script>
+		<script src="<%=basePath%>/assets/js/main.js"></script>
 	</head>
 
 	<body>
@@ -66,7 +70,7 @@
 			<p>©2017 Design by Gao</p>
 		</footer>
 		<canvas id="canvas"></canvas>
-		<script src="../js/canvas.js"></script>
+		<script src="<%=basePath%>/assets/js/canvas.js"></script>
 		<script>
 			var bodyHeight = $(window).height();
 			var footerHieght=$("footer").height();

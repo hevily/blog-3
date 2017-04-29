@@ -1,6 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path;
+%>
 <!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<meta charset="UTF-8">
 		<title>关于我</title>
@@ -36,7 +40,7 @@
 									<a href="myInfo.html">修改密码</a>
 								</li>
 								<li class="exit">
-									<a href="login.html">退出</a>
+									<a href="login.jsp">退出</a>
 								</li>
 							</ul>
 						</div>
@@ -52,7 +56,7 @@
 						<a href="Article.html">博文</a>
 					</li>
 					<li>
-						<a href="Album.html">相册</a>
+						<a href="Album.jsp">相册</a>
 					</li>
 					<li>
 						<a href="Diary.html">日记</a>
@@ -61,7 +65,7 @@
 						<a href="Guestbook.html">留言板</a>
 					</li>
 					<li class="navOn">
-						<a href="about.html">关于我</a>
+						<a href="about.jsp">关于我</a>
 					</li>
 				</ul>
 			</div>
