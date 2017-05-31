@@ -7,25 +7,108 @@
 		<title></title>
 		<!--<include file='headerFile' />-->
 		<script src="opensource/jquery/jquery-3.2.0.min.js"></script>
-		<script src="opensource/mui/js/mui.dtpicker.js"></script>
 		<script src="opensource/mui/js/mui.min.js"></script>
-		<script src="opensource/mui/js/mui.picker.all.js"></script>
 		<script src="opensource/mui/js/mui.picker.min.js"></script>
+		<script src="opensource/mui/js/mui.picker.all.js"></script>
+		<script src="opensource/mui/js/mui.dtpicker.js"></script>
+		<script src="assest/js/global.js"></script>
+		<script src="assest/js/main.js"></script>
 		<link rel="stylesheet" href="opensource/mui/css/mui.min.css" />
 		<link rel="stylesheet" href="opensource/mui/css/mui.dtpicker.css" />
-		<link rel="stylesheet" href="opensource/mui/css/mui.picker.min.css"/>
-		<link rel="stylesheet" href="assest/css/global.css"/>
-		<link rel="stylesheet" href="assest/css/login.css"/>
+		<link rel="stylesheet" href="opensource/mui/css/mui.picker.min.css" />
+		<link rel="stylesheet" href="assest/css/global.css" />
+		<link rel="stylesheet" href="assest/css/login.css" />
 		<style type="text/css">
-			.title a{color: #000000;font-size: 33px !important;}
+			body {
+				background: #FFFFFF;
+			}
+			
+			.logo {
+				width: 288px;
+				height: 243px;
+				background: url(assest/img/icon_login.png) no-repeat 0 0;
+				margin: auto;
+				zoom: 0.4;
+				/*transform: scale(0.4);*/
+				margin-top: 4rem;
+				margin-bottom: 3rem;
+			}
+			
+			.title a {
+				color: #000000;
+				font-size: 30px !important;
+			}
+			
+			.title {
+				box-shadow: none;
+				background: none;
+				height: auto;
+				padding: 0;
+			}
+			
+			.title h1 {
+				height: 50px;
+				line-height: 50px;
+			}
+			
+			.input-login {
+				width:92%;
+				margin: auto;
+				background: #F3F3F3;
+				border-radius: 3px;
+			}
+			
+			.input-userName,.input-password{position: relative;}
+			.input-login input{margin:0;border: none;background: none;padding: 10px;padding-left: 50px;font-size: 13px;height: 47px;}
+			.input-login .input-userName{border-bottom: 1px solid rgb( 219, 219, 219 );}
+			.input-login i{background: url(assest/img/icon_login.png) no-repeat;display: inline-block;position: absolute;opacity: 0.5;zoom: 0.36;top: 31px;left: 40px;}
+			.input-userName i{background-position: 0 -339px;width: 53px;height: 67px;}
+			.input-password i{background-position: 0 -408px;width: 56px;height: 56px;}
+			.login-mid{margin: 1rem auto 1rem auto;width: 92%;font-size: 12px;}
+			.login-mid,.login-mid a{color:  rgb( 102, 102, 102 );}
+			.pwd-checkBox{position: relative;float: left;padding-left: 20px;cursor: pointer;}
+			.login-mid a{float: right;}
+			.pwd-checkBox:before{content: '';display: inline-block;background: url(assest/img/icon_login.png) no-repeat;background-position:0 -301px;width: 40px;height: 37px;position: absolute;top: 7px;left: 0;zoom: 0.36;}
+			.uncheck:before{background-position:0 -260px;width: 40px;height: 40px;top: 7px;}
+		    .loginBtn{width: 92%;margin: 1rem auto 1rem auto;background: #363636;color: rgb( 255, 255, 255 );padding: 10px 0;display: block;}
+		    .login-tip p{text-align: center;color: rgb( 153, 153, 153 );font-size: 13px;}
+		    .login-tip p a{color: #FF6C16;font-size: 13px;}
+		    .lewbtns{width: 120px;left: 50%;margin: 8rem auto 2rem auto;}
+		    .lewbtns a{background: url(assest/img/icon_login.png) no-repeat;width: 92px;height: 92px;zoom: 0.4;}
+		    .lewbtns .login-weixin{background-position: 0 -755px;float: right;}
+		    .lewbtns .login-QQ{background-position:-91px -755px ;float: left;}
 		</style>
 	</head>
+
 	<body>
 		<header class="mui-bar title">
-			<a class="mui-icon mui-icon-back"></a>
+			<a class="mui-icon mui-icon-arrowleft"></a>
 			<h1 class="mui-title">登录</h1>
-			<div class="logo"></div>
 		</header>
+		<div class="logo"></div>
+		<div class="input-login">
+			<div class="input-userName">
+				<i></i>
+				<input type="text" placeholder="请输入用户名" class="userName">
+			</div>
+			<div class="input-password">
+				<i></i>
+				<input type="password" placeholder="请输入密码" class="password">
+			</div>
+		</div>
+		<div class="login-mid mui-clearfix">
+			<span class="pwd-checkBox">记住密码</span>
+			<a href="#">忘记密码?</a>
+		</div>
+		<button type="button" class="mui-btn loginBtn">登录</button>
+		<div class="login-tip">
+			<p>还没有账号？去<a href="#">注册</a></p>
+		</div>
+		<div class="lewbtns mui-clearfix">
+			<p>一 其他登陆方式 一</p>
+			<a href="javascript:void(0)" class="login-weixin"></a>
+			<a href="javascript:void(0)" class="login-QQ"></a>
+		</div>
 	</body>
 
 </html>

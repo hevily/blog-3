@@ -1,1 +1,7 @@
-*{padding: 0;border: 0;margin: 0;}
+* {padding: 0;border: 0;margin: 0;}
+span{display: inline-block;}
+a{display: inline-block;}
+input::-webkit-input-placeholder{color:rgb( 182, 182, 182 );}
+input:-moz-placeholder {color:rgb( 182, 182, 182 );}
+input::-moz-placeholder {color:rgb( 182, 182, 182 );}
+input:-ms-input-placeholder {color:rgb( 182, 182, 182 );}
