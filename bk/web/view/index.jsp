@@ -9,6 +9,7 @@
 		<meta charset="UTF-8">
 		<title>主页</title>
         <jsp:include page="inc.jsp"></jsp:include>
+		<script src="index.js"></script>
 		<style>
 			.scrollTop{position:fixed;right:100px;bottom:100px;width:100px;height:100px;cursor:pointer;display:none;}
 		</style>
@@ -30,15 +31,15 @@
 						</div>
 						<div class="loginList">
 							<ul>
-								<li class="loginName">寻找火星人</li>
+								<li class="loginName"></li>
 								<li class="personInfo">
-									<a href="<%=basePath%>/view/myInfo.jsp">个人中心</a>
+									<a href="<%=basePath%>/myInfo.jsp">个人中心</a>
 								</li>
 								<li class="changePwd">
-									<a href="<%=basePath%>/view/myInfo.jsp">修改密码</a>
+									<a href="<%=basePath%>/myInfo.jsp">修改密码</a>
 								</li>
 								<li class="exit">
-									<a href="<%=basePath%>">退出</a>
+									<a href="<%=basePath%>/login.jsp">退出</a>
 								</li>
 							</ul>
 						</div>
@@ -48,22 +49,22 @@
 			<div class="nav-wrap">
 				<ul class="nav" id="nav">
 					<li class="navOn">
-						<a href="<%=basePath%>/view/index.jsp">首页</a>
+						<a href="index.jsp">首页</a>
 					</li>
 					<li>
-						<a href="<%=basePath%>/view/Article.jsp">博文</a>
+						<a href="Article.jsp">博文</a>
 					</li>
 					<li>
-						<a href="<%=basePath%>/view/Album.jsp">相册</a>
+						<a href="Album.jsp">相册</a>
 					</li>
 					<li>
-						<a href="<%=basePath%>/view/Diary.jsp">日记</a>
+						<a href="Diary.jsp">日记</a>
 					</li>
 					<li>
-						<a href="<%=basePath%>/view/Guestbook.jsp">留言板</a>
+						<a href="Guestbook.jsp">留言板</a>
 					</li>
 					<li>
-						<a href="<%=basePath%>/view/about.jsp">关于我</a>
+						<a href="about.jsp">关于我</a>
 					</li>
 				</ul>
 			</div>
@@ -113,97 +114,22 @@
 			<div class="main-wrap clearfix">
 				<div class="main-left main-left-fadeinL">
 					<h1 class="h1">文章推荐</h1>
-					<div class="Article-wrap">
-						<article class=" clearfix">
-							<a href="<%=basePath%>/view/articleDetail.jsp">
-								<div class="article-bg">
-									<img src="<%=basePath%>/assets/img/1-1504022119110-L.jpg" alt="文章图片">
-								</div>
-								<div class="article-content">
-									<header>
-										<h3>文章标题</h3>
-									</header>
-									<p class="p-bottom">己在互联网上的个人品牌，其实这就是一种“自媒体”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？” 。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先只有先了解这套流程，我们才能做出自己满意的个人博客。 ”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先
-									</p>
-									<p class="article-footer clearfix"><span>分类:<a href="#">学无止境</a></span><span>发布时间：<time>2017-03-24 13:15:11</time></span></p>
-								</div>
-							</a>
-						</article>
-						<article class=" clearfix">
-							<a href="<%=basePath%>/view/articleDetail.jsp">
-								<div class="article-bg">
-									<img src="<%=basePath%>/assets/img/1-1504022119110-L.jpg" alt="文章图片">
-								</div>
-								<div class="article-content">
-									<header>
-										<h3>文章标题</h3>
-									</header>
-									<p class="p-bottom">己在互联网上的个人品牌，其实这就是一种“自媒体”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？” 。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先只有先了解这套流程，我们才能做出自己满意的个人博客。 ”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先
-									</p>
-									<p class="article-footer clearfix"><span>分类:<a href="#">学无止境</a></span><span>发布时间：<time>2017-03-24 13:15:11</time></span></p>
-								</div>
-							</a>
-						</article>
-						<article class=" clearfix">
-							<a href="<%=basePath%>/view/articleDetail.jsp">
-								<div class="article-bg">
-									<img src="<%=basePath%>/assets/img/1-1504022119110-L.jpg" alt="文章图片">
-								</div>
-								<div class="article-content">
-									<header>
-										<h3>文章标题</h3>
-									</header>
-									<p class="p-bottom">己在互联网上的个人品牌，其实这就是一种“自媒体”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？” 。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先只有先了解这套流程，我们才能做出自己满意的个人博客。 ”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先
-									</p>
-									<p class="article-footer clearfix"><span>分类:<a href="#">学无止境</a></span><span>发布时间：<time>2017-03-24 13:15:11</time></span></p>
-								</div>
-							</a>
-						</article>
-						<article class=" clearfix">
-							<a href="<%=basePath%>/view/articleDetail.jsp">
-								<div class="article-bg">
-									<img src="<%=basePath%>/assets/img/1-1504022119110-L.jpg" alt="文章图片">
-								</div>
-								<div class="article-content">
-									<header>
-										<h3>文章标题</h3>
-									</header>
-									<p class="p-bottom">己在互联网上的个人品牌，其实这就是一种“自媒体”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？” 。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先只有先了解这套流程，我们才能做出自己满意的个人博客。 ”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先
-									</p>
-									<p class="article-footer clearfix"><span>分类:<a href="#">学无止境</a></span><span>发布时间：<time>2017-03-24 13:15:11</time></span></p>
-								</div>
-							</a>
-						</article>
-						<article class=" clearfix">
-							<a href="<%=basePath%>/view/articleDetail.jsp">
-								<div class="article-bg">
-									<img src="<%=basePath%>/assets/img/1-1504022119110-L.jpg" alt="文章图片">
-								</div>
-								<div class="article-content">
-									<header>
-										<h3>文章标题</h3>
-									</header>
-									<p class="p-bottom">己在互联网上的个人品牌，其实这就是一种“自媒体”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？” 。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先只有先了解这套流程，我们才能做出自己满意的个人博客。 ”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先
-									</p>
-									<p class="article-footer clearfix"><span>分类:<a href="#">学无止境</a></span><span>发布时间：<time>2017-03-24 13:15:11</time></span></p>
-								</div>
-							</a>
-						</article>
-						<article class=" clearfix">
-							<a href="<%=basePath%>/view/articleDetail.jsp">
-								<div class="article-bg">
-									<img src="<%=basePath%>/assets/img/1-1504022119110-L.jpg" alt="文章图片">
-								</div>
-								<div class="article-content">
-									<header>
-										<h3>文章标题</h3>
-									</header>
-									<p class="p-bottom">己在互联网上的个人品牌，其实这就是一种“自媒体”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？” 。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先只有先了解这套流程，我们才能做出自己满意的个人博客。 ”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先
-									</p>
-									<p class="article-footer clearfix"><span>分类:<a href="#">学无止境</a></span><span>发布时间：<time>2017-03-24 13:15:11</time></span></p>
-								</div>
-							</a>
-						</article>
+					<div class="Article-wrap" id="recommandArticle">
+						<%--<article class=" clearfix">--%>
+							<%--<a href="<%=basePath%>/view/articleDetail.jsp">--%>
+								<%--<div class="article-bg">--%>
+									<%--<img src="<%=basePath%>/assets/img/1-1504022119110-L.jpg" alt="文章图片">--%>
+								<%--</div>--%>
+								<%--<div class="article-content">--%>
+									<%--<header>--%>
+										<%--<h3>文章标题</h3>--%>
+									<%--</header>--%>
+									<%--<p class="p-bottom">己在互联网上的个人品牌，其实这就是一种“自媒体”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？” 。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先只有先了解这套流程，我们才能做出自己满意的个人博客。 ”。那么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先么我们怎么去建立自己的自媒体博客呢？我认为：首先得先明白建立一个博客的流程是什么？只有先--%>
+									<%--</p>--%>
+									<%--<p class="article-footer clearfix"><span>分类:<a href="#">学无止境</a></span><span>发布时间：<time>2017-03-24 13:15:11</time></span></p>--%>
+								<%--</div>--%>
+							<%--</a>--%>
+						<%--</article>--%>
 					</div>
 				</div>
 				<div class="main-right main-left-fadeinR">
@@ -211,23 +137,23 @@
 						<h1 class="h1">站内搜索</h1>
 						<div class="searchInput">
 							<input type="text" placeholder="请输入你需要的内容">
-							<i></i>
+							<i id="searchIcon" class="searchIcon"></i>
 						</div>
 					</div>
 					<div class="common sortLinks">
 						<h1 class="h1">文章分类</h1>
 						<ul class="clearfix">
 							<li style="background: #666666;">
-								<a href="<%=basePath%>/view/Article.jsp">学无止境</a>
+								<a href="javascript:void(0)" class="catagory">学无止境</a>
 							</li>
-							<li style="background: #00CCCC;">
-								<a href="<%=basePath%>/view/Article.jsp">奇思妙想</a>
+							<li style="background: #00CCCC;" class="catagory">
+								<a href="javascript:void(0)" class="catagory">奇思妙想</a>
 							</li>
-							<li style="background: #CC9966;">
-								<a href="<%=basePath%>/view/Article.jsp">人文科技</a>
+							<li style="background: #CC9966;" class="catagory">
+								<a href="javascript:void(0)" class="catagory">人文科技</a>
 							</li>
-							<li style="background: #6633CC;">
-								<a href="<%=basePath%>/view/Article.jsp">人物</a>
+							<li style="background: #6633CC;" class="catagory">
+								<a href="javascript:void(0)" class="catagory">人物</a>
 							</li>
 						</ul>
 					</div>
@@ -241,32 +167,12 @@
 					<div class="common Article">
 						<h1 class="h1">文章排行</h1>
 						<ul class="Article-list" id="Article-list">
-							<li>
-								<a href="<%=basePath%>/view/articleDetail.jsp">文章标题</a>
-							</li>
-							<li>
-								<a href="<%=basePath%>/view/articleDetail.jsp">文章标题</a>
-							</li>
-							<li>
-								<a href="<%=basePath%>/view/articleDetail.jsp">文章标题</a>
-							</li>
-							<li>
-								<a href="<%=basePath%>/view/articleDetail.jsp">文章标题</a>
-							</li>
-							<li>
-								<a href="<%=basePath%>/view/articleDetail.jsp">文章标题</a>
-							</li>
-							<li>
-								<a href="<%=basePath%>/view/articleDetail.jsp">文章标题</a>
-							</li>
+							<%--<li>--%>
+								<%--<a href="<%=basePath%>/view/articleDetail.jsp">文章标题</a>--%>
+							<%--</li>--%>
 						</ul>
-						<ol class="number">
-							<li>1</li>
-							<li>2</li>
-							<li>3</li>
-							<li>4</li>
-							<li>5</li>
-							<li>6</li>
+						<ol class="number" id="numbers">
+							<%--<li>1</li>--%>
 						</ol>
 					</div>
 					<div class="common visitor">
@@ -295,25 +201,14 @@
 		</footer>
 		<div class="scrollTop" style="z-index: 9999; display: block;"><img src="<%=basePath%>/assets/img/indexIcon-4.png"></div>
 		<canvas id="canvas" style="height: 1000px;"></canvas>
-		<!--<script>
-			var bodyHeight = $('body').height();
-			$('canvas').height(bodyHeight);
-		</script>-->
 		<script src="<%=basePath%>/assets/js/canvas.js"></script>
 		<script>
+			//获取用户昵称
+            $('.loginName').text($.cookie('nickname'))
             //返回头部按钮事件
             $('.scrollTop').on('click', function() {
                 $("html,body").animate({scrollTop:0}, 500);
             });
-
-            $(window).on('scroll',function () {
-                console.log($(this).scrollTop)
-                if($(this).scrollTop > 200){
-                    $('.scrollTop').show();
-                }else{
-                    $('.scrollTop').hide();
-                }
-            })
 			//相册幻灯片
 			//设置定时器
 			timer = setInterval(function() {

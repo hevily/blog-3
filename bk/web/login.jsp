@@ -8,7 +8,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>登录</title>
-        <jsp:include page="inc.jsp"></jsp:include>
+        <jsp:include page="view/inc.jsp"></jsp:include>
 		<script src="<%=basePath%>/view/login.js"></script>
 	</head>
 	<body>
@@ -68,7 +68,7 @@
 			<p>©2017 Design by Gao</p>
 		</footer>
 		<canvas id="canvas"></canvas>
-		<script src="<%=basePath%>/assets/js/canvas.js"></script>
+		<script src="assets/js/canvas.js"></script>
 		<script>
 			var bodyHeight = $(window).height();
 			var footerHieght=$("footer").height();

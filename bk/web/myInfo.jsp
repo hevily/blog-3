@@ -8,7 +8,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>个人中心</title>
-		<jsp:include page="inc.jsp"></jsp:include>
+		<jsp:include page="view/inc.jsp"></jsp:include>
+		<script src="<%=basePath%>/myInfo.js"></script>
 	</head>
 
 	<body>
@@ -29,13 +30,13 @@
 							<ul>
 								<li class="loginName">寻找火星人</li>
 								<li class="personInfo">
-									<a href="<%=basePath%>/view/myInfo.jsp">个人中心</a>
+									<a href="<%=basePath%>/myInfo.jsp">个人中心</a>
 								</li>
 								<li class="changePwd">
-									<a href="<%=basePath%>/view/myInfo.jsp">修改密码</a>
+									<a href="<%=basePath%>/myInfo.jsp">修改密码</a>
 								</li>
 								<li class="exit">
-									<a href="<%=basePath%>/view/login.jsp">退出</a>
+									<a href="<%=basePath%>/login.jsp">退出</a>
 								</li>
 							</ul>
 						</div>
@@ -69,7 +70,7 @@
 			<div class="main-wrap clearfix">
 				<div class="location">
 					<span class="mui-icon mui-icon-location">您当前的位置：</span>
-					<a href="<%=basePath%>/view/index.jsp">首页</a><span>></span><span>个人中心</span>
+					<a href="<%=basePath%>/view/index.jsp">首页</a><span>></span><span class="italic">个人中心</span>
 				</div>
 			</div>
 			<div class="info-wrap clearfix">
@@ -84,26 +85,28 @@
 							<img src="<%=basePath%>/assets/img/photo.jpg" alt="头像" class="login-Photo" />
 							<span>修改头像</span>
 						</div>
-						<div class="info-common clearfix"><span>账号：</span><span>13328202442</span></div>
-						<div class="info-common clearfix"><span>昵称：</span><input type="text" value="寻找火星人" /></div>
+						<div class="info-common clearfix"><span>账号：</span><span id="mobile1"></span></div>
+						<div class="info-common clearfix"><span>昵称：</span><input type="text" id="nickName"></div>
 						<div class="info-common clearfix"><span>个性签名：</span><textarea name="" value="山有木兮木有枝"></textarea></div>
 					    <button class="sign-button" type="submit">确认修改</button>
 					</div>
 					<div class="modify-password info-common-wrap" style="display: none;">
-						<div class="info-common clearfix"><span>当前账号</span><input type="text" value="13328202442" disabled style="background: #F3F6F1;"></div>
-						<div class="info-common clearfix"><span>当前密码</span><input type="text" value="" /></div>
-						<div class="info-common clearfix"><span>新密码</span><input type="text" value="" /></div>
-						<div class="info-common clearfix"><span>确认密码</span><input type="text" value="" /></div>
-						<button class="sign-button" type="submit">确认修改</button>
+						<div class="info-common clearfix"><span>当前账号</span><input type="text"  disabled style="background: #F3F6F1;" id="mobile2"></div>
+						<div class="info-common clearfix"><span>当前密码</span><input type="text" value="" id="oldPwd"></div>
+						<div class="info-common clearfix"><span>新密码</span><input type="text" value="" id="newPwd"></div>
+						<div class="info-common clearfix"><span>确认密码</span><input type="text" value="" id="confirmPsd"></div>
+						<p class="error" id="confirmError"></p>
+						<button class="sign-button" type="submit" id="pwdChanged">确认修改</button>
 					</div>
 					<div class="find-password info-common-wrap" style="display: none;">
-						<input type="text" class="account" aria-label="手机号" placeholder="手机号">
+						<input type="text" class="account" aria-label="手机号" placeholder="手机号" id="codeMobile">
 						<div class="code">
-							<input type="text" aria-label="验证码" placeholder="验证码">
+							<input type="text" aria-label="验证码" placeholder="验证码" id="code">
 							<input class="send" value="发送验证码">
 						</div>
-						<input type="password" class="account" aria-label="新密码" placeholder="新密码">
-						<button class="sign-button" type="submit">确认修改</button>
+						<input type="password" class="account" aria-label="新密码" placeholder="新密码" id="newPsd">
+						<p class="error" id="codeConfirmError"></p>
+						<button class="sign-button" type="submit" id="codePsdChanged">确认修改</button>
 					</div>
 				</div>
 			</div>

@@ -12,16 +12,40 @@
 		<div id="app">
 			{{message}}
 		</div>
+		<script>
+			var app = new Vue({
+				el: "#app",
+				data: {
+					message: '1、DOM数据绑定'
+				}
+			})
+		</script>
 		<!--2、指令-提示v-bind:title-->
 		<div id="app-2">
 			<span v-bind:title="message">
 				2、指令-提示v-bind:title
 			</span>
 		</div>
+		<script>
+			var app2 = new Vue({
+				el: "#app-2",
+				data: {
+					message: '指令提示'
+				}
+			})
+		</script>
 		<!--3、指令-条件v-if-->
 		<div id="app-3">
 			<p v-if="seen">3、指令-条件v-if</p>
 		</div>
+		<script>
+			var app3 = new Vue({
+				el: "#app-3",
+				data: {
+					seen: true
+				}
+			})
+		</script>
 		<!--4、指令-循环v-for-->
 		<div id="app-4">
 			<span>4、指令-循环for</span>
@@ -31,11 +55,41 @@
 				</li>
 			</ul>
 		</div>
+		<script>
+			var app4 = new Vue({
+				el: "#app-4",
+				data: {
+					todos: [{
+							text: '学习javascript'
+						},
+						{
+							text: '学习Vue'
+						},
+						{
+							text: '学习整个项目'
+						}
+					]
+				}
+			})
+		</script>
 		<!--5、指令-事件监听v-on-->
 		<div id="app-5">
 			<p>{{message}}</p>
 			<button v-on:click="alert">点击</button>
 		</div>
+		<script>
+			var app5 = new Vue({
+				el: "#app-5",
+				data: {
+					message: '5、指令-事件监听v-on'
+				},
+				methods: {
+					alert: function() {
+						alert(this.message)
+					}
+				}
+			})
+		</script>
 		<!--6、指令数据双向绑定v-model-->
 		<div id="app-6">
 			<span>6、指令-数据双向绑定v-model</span>
@@ -44,58 +98,66 @@
 				<input v-model="message">
 			</div>
 		</div>
-	</body>
-	<script>
-		var app = new Vue({
-			el: "#app",
-			data: {
-				message: '1、DOM数据绑定'
-			}
-		})
-		var app2 = new Vue({
-			el: "#app-2",
-			data: {
-				message: '指令提示'
-			}
-		})
-		var app3 = new Vue({
-			el: "#app-3",
-			data: {
-				seen: true
-			}
-		})
-		var app4 = new Vue({
-			el: "#app-4",
-			data: {
-				todos: [{
-						text: '学习javascript'
-					},
-					{
-						text: '学习Vue'
-					},
-					{
-						text: '学习整个项目'
-					}
-				]
-			}
-		})
-		var app5 = new Vue({
-			el: "#app-5",
-			data: {
-				message: '5、指令-事件监听v-on'
-			},
-			methods: {
-				alert: function() {
-					alert(this.message)
+		<script>
+			var app6 = new Vue({
+				el: "#app-6",
+				data: {
+					message: "数据双向绑定"
 				}
-			}
-		})
-		var app6 = new Vue({
-			el: "#app-6",
-			data: {
-				message: "datas"
-			}
-		})
-	</script>
+			})
+		</script>
+		<!--7、组件-->
+		<div id="app-7">
+			<p>7、组件</p>
+			<ul>
+				<my-component v-for="item in list" v-bind:todo="item" v-bind:key="item.id" v-bind:title="title"></my-component>
+			</ul>
+		</div>
+		<script>
+			// 注册
+			Vue.component('my-component', {
+				props:['todo'],
+				template: '<li>{{todo.text}}</li>'
+			})
+			// 创建根实例
+			var app7=new Vue({
+				el:"#app-7",
+				data:{
+					list:[
+					   {id:0,text:'列表1'},
+					   {id:1,text:'列表2'},
+					   {id:2,text:'列表3'}
+					],
+					title:'这是title'
+				}
+			})
+		</script>
+		<!--8、数据与方法-->
+		<div id="app-8">
+			<p>8、数据与方法</p>
+			<ul>
+				<li><span>desc:</span><span>{{desc}}</span></li>
+				<li><span>message:</span><span>{{message}}</span></li>
+				<li><span>tips:</span><span>{{tips}}</span></li>
+				<li><span>times:</span><span>{{times}}</span></li>
+			</ul>
+		</div>
+		<script>
+			var data={message:1,tips:'',desc:'',times:''};
+			var app8=new Vue({
+				el:"#app-8",
+				data:data
+			})
+			app8.tips='app8.a===data.a  :'+(app8.a===data.a);
+			app8.desc='响应式系统';
+			app8.message=2;
+			data.message=3;
+			var times=0;
+			app8.$watch('message',function () {
+				times++;
+				app8.times='message值改变了'+times+'次';
+			})
+		</script>
+	</body>
 
 </html>
