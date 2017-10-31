@@ -158,6 +158,35 @@
 				app8.times='message值改变了'+times+'次';
 			})
 		</script>
+		<!--9实例生命周期-->
+		<div id="app-9">
+			<p>9、实例生命周期</p>
+			<ul>
+				<li>{{msg}}</li>
+				<li><span>msg is </span>{{val}}</li>
+			</ul>
+		</div>
+		<script>
+			var app9=new Vue({
+//				el:"#app-9",
+				data:{
+					msg:1
+				},
+				created:function  () {
+					this.val=this.msg
+				},
+				mounted:function  () {
+					this.$nextTick(function  () {
+						if(this.msg==1){
+							console.log('123')
+						}
+					})
+				}
+			})
+			//$mount提到el挂载到节点app-9
+			app9.$mount("#app-9")
+			
+		</script>
 	</body>
 
 </html>
