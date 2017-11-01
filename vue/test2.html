@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<script src="js/jquery-3.2.0.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!--v-bind:href缩写:href-->
+			<a :href="url">v-bind改变href值</a>
+			<!--v-on:click缩写:@click-->
+			<div @click="doSomething">点击</div>
+			<form action="index.html" method="post" v-on:submit.prevent="onSubmit">
+				<input type="submit" value="提交">
+			</form>
+			<div id="jqTest">
+				<p>val1:<span id="val1">{{val1}}</span></p>
+				<p>计算属性:<span id="val2">{{val2}}</span></p>
+			</div>
+		</div>
+	</body>
+	<script>
+		var vm =new Vue({
+			el:"#app",
+			data:{
+				url:'index.html',
+				val1:'tes123t'
+			},
+			methods:{
+				doSomething:function  () {
+					alert('2')
+				},
+				onSubmit:function  () {
+					alert('阻止表单默认提交行为')
+				}
+			},
+			computed:{//绑定计算属性、创建依赖关系、缓存
+				val2:function  () {
+					return this.val1;
+				}
+			},
+//			created:function  () {//单词绑定
+//				this.val2=this.val1;
+//			}
+		})
+//		$("#val1").text($("#val2").text());
+	</script>
+</html>

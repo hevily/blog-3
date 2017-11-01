@@ -116,19 +116,27 @@
 		<script>
 			// 注册
 			Vue.component('my-component', {
-				props:['todo'],
+				props: ['todo'],
 				template: '<li>{{todo.text}}</li>'
 			})
 			// 创建根实例
-			var app7=new Vue({
-				el:"#app-7",
-				data:{
-					list:[
-					   {id:0,text:'列表1'},
-					   {id:1,text:'列表2'},
-					   {id:2,text:'列表3'}
+			var app7 = new Vue({
+				el: "#app-7",
+				data: {
+					list: [{
+							id: 0,
+							text: '列表1'
+						},
+						{
+							id: 1,
+							text: '列表2'
+						},
+						{
+							id: 2,
+							text: '列表3'
+						}
 					],
-					title:'这是title'
+					title: '这是title'
 				}
 			})
 		</script>
@@ -143,19 +151,24 @@
 			</ul>
 		</div>
 		<script>
-			var data={message:1,tips:'',desc:'',times:''};
-			var app8=new Vue({
-				el:"#app-8",
-				data:data
+			var data = {
+				message: 1,
+				tips: '',
+				desc: '',
+				times: ''
+			};
+			var app8 = new Vue({
+				el: "#app-8",
+				data: data
 			})
-			app8.tips='app8.a===data.a  :'+(app8.a===data.a);
-			app8.desc='响应式系统';
-			app8.message=2;
-			data.message=3;
-			var times=0;
-			app8.$watch('message',function () {
+			app8.tips = 'app8.a===data.a  :' + (app8.a === data.a);
+			app8.desc = '响应式系统';
+			app8.message = 2;
+			data.message = 3;
+			var times = 0;
+			app8.$watch('message', function() {
 				times++;
-				app8.times='message值改变了'+times+'次';
+				app8.times = 'message值改变了' + times + '次';
 			})
 		</script>
 		<!--9实例生命周期-->
@@ -167,17 +180,17 @@
 			</ul>
 		</div>
 		<script>
-			var app9=new Vue({
-//				el:"#app-9",
-				data:{
-					msg:1
+			var app9 = new Vue({
+				//				el:"#app-9",
+				data: {
+					msg: 1
 				},
-				created:function  () {
-					this.val=this.msg
+				created: function() {
+					this.val = this.msg
 				},
-				mounted:function  () {
-					this.$nextTick(function  () {
-						if(this.msg==1){
+				mounted: function() {
+					this.$nextTick(function() {
+						if(this.msg == 1) {
 							console.log('123')
 						}
 					})
@@ -185,7 +198,95 @@
 			})
 			//$mount提到el挂载到节点app-9
 			app9.$mount("#app-9")
-			
+		</script>
+		<!--10、计算属性-->
+		<div id="app-10">
+			<p>10、计算属性</p>
+			<ul>
+				<li>firstName:<span>{{firstName}}</span></li>
+				<li>lastName:<span>{{lastName}}</span></li>
+				<li>fullName:<span>{{fullName}}</span></li>
+			</ul>
+		</div>
+		<script>
+			var app10 = new Vue({
+				el: "#app-10",
+				data: {
+					firstName: "a",
+					lastName: "b"
+				},
+				computed: {
+					fullName: {
+						get: function() {
+							return this.firstName + ' ' + this.lastName
+						},
+						set: function(newValue) {
+							var names = newValue.split(' ')
+							this.firstName = names[0]
+							this.lastName = names[names.length - 1]
+						}
+					}
+				}
+			})
+			app10.firstName = 'c';
+			app10.fullName = "gao cheng hui"
+		</script>
+		<!--11、侦听器-->
+		<div id="watch-example">
+			<p>11、侦听器</p>
+			<ul>
+				<li>Ask a yes/no question:<input v-model="question"></li>
+				<li>{{ answer }}</li>
+			</ul>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+		<script>
+			var watchExampleVM = new Vue({
+				el: '#watch-example',
+				data: {
+					question: '',
+					answer: 'I cannot give you an answer until you ask a question!'
+				},
+				//				computed: {
+				//					answer: function() {
+				//						return this.question;
+				//					}
+				//				},
+				watch: {
+					// 如果 `question` 发生改变，这个函数就会运行
+					question: function(newQuestion) {
+						this.answer = 'Waiting for you to stop typing...'
+						this.getAnswer()
+					}
+				},
+				methods: {
+					// `_.debounce` 是一个通过 Lodash 限制操作频率的函数。
+					// 在这个例子中，我们希望限制访问 yesno.wtf/api 的频率
+					// AJAX 请求直到用户输入完毕才会发出。想要了解更多关于
+					// `_.debounce` 函数 (及其近亲 `_.throttle`) 的知识，
+					// 请参考：https://lodash.com/docs#debounce
+					getAnswer: _.debounce(
+						function() {
+							if(this.question.indexOf('?') === -1) {
+								this.answer = 'Questions usually contain a question mark. ;-)'
+								return
+							}
+							this.answer = 'Thinking...'
+							var vm = this
+							axios.get('https://yesno.wtf/api')
+								.then(function(response) {
+									vm.answer = _.capitalize(response.data.answer)
+								})
+								.catch(function(error) {
+									vm.answer = 'Error! Could not reach the API. ' + error
+								})
+						},
+						// 这是我们为判定用户停止输入等待的毫秒数
+						500
+					)
+				}
+			})
 		</script>
 	</body>
 
